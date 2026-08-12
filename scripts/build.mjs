@@ -16,3 +16,15 @@ await build({
   alias: { '@trellis/core': path.join(root, 'packages/core/src/index.ts') },
   logLevel: 'info',
 });
+
+// Shared wiring logic, consumed by scripts/wire.mjs (CJS require) and bundled
+// from source into the VS Code extension.
+await build({
+  entryPoints: [path.join(root, 'packages/wiring/src/index.ts')],
+  outfile: path.join(root, 'packages/wiring/dist/index.cjs'),
+  bundle: true,
+  platform: 'node',
+  target: 'node20',
+  format: 'cjs',
+  logLevel: 'info',
+});

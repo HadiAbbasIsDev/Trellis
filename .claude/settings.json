@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/home/it-admin/Desktop/Memory-Management/scripts/hooks/stop-guard.mjs\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"/home/it-admin/Desktop/Memory-Management/scripts/hooks/journal.mjs\""
+          }
+        ]
+      }
+    ]
+  }
+}

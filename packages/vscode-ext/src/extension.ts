@@ -6,7 +6,6 @@
  * the .vsix ships zero runtime node_modules, no background process, and
  * nothing leaves the machine.
  */
-import { execFile } from 'node:child_process';
 import * as fs from 'node:fs';
 import path from 'node:path';
 import * as vscode from 'vscode';
@@ -18,20 +17,35 @@ import {
   resolveNode,
   type LoadedVault,
 } from '@trellis/core';
+import { repairStalePaths, wireProject, type WireProjectOptions } from '@trellis/wiring';
 import { GraphPanel, type GraphEdgeDatum, type GraphPayload } from './panel';
 
 /**
- * The wire script lives in a Trellis checkout, not in the .vsix (it also
- * carries the hook scripts agents run at session end). Configurable so the
- * extension works on any machine; falls back to the dev checkout when it
- * exists so local development stays zero-config.
+ * The .vsix is self-sufficient: dist/ carries the MCP server bundle and the
+ * hook scripts, so wiring points configs at the extension's own install dir.
+ * An optional trellis.repoPath setting overrides with a checkout — useful in
+ * development so wired projects track source instead of the packaged copy.
  */
-const DEV_REPO = '/home/it-admin/Desktop/Memory-Management';
-function wireScript(): string | undefined {
-  const configured = vscode.workspace.getConfiguration('trellis').get<string>('repoPath');
-  const repo = configured?.trim() || DEV_REPO;
-  const script = path.join(repo, 'scripts', 'wire.mjs');
-  return fs.existsSync(script) ? script : undefined;
+function wireOptions(ctx: vscode.ExtensionContext): WireProjectOptions {
+  const configured = vscode.workspace.getConfiguration('trellis').get<string>('repoPath')?.trim();
+  if (configured) {
+    const server = path.join(configured, 'packages/mcp/dist/server.js');
+    if (fs.existsSync(server)) {
+      return {
+        serverPath: server,
+        stopScript: path.join(configured, 'scripts/hooks/stop-guard.mjs'),
+        journalScript: path.join(configured, 'scripts/hooks/journal.mjs'),
+        hooks: true,
+      };
+    }
+  }
+  const dist = path.join(ctx.extensionPath, 'dist');
+  return {
+    serverPath: path.join(dist, 'server.js'),
+    stopScript: path.join(dist, 'hooks', 'stop-guard.mjs'),
+    journalScript: path.join(dist, 'hooks', 'journal.mjs'),
+    hooks: true,
+  };
 }
 
 /** fs.watch fires in bursts (tmp write + rename per node); coalesce them. */
@@ -241,24 +255,17 @@ export function activate(context: vscode.ExtensionContext): void {
         void vscode.window.showWarningMessage('Trellis: open a folder to wire it.');
         return;
       }
-      const script = wireScript();
-      if (!script) {
-        void vscode.window.showErrorMessage(
-          'Trellis: no Trellis checkout found. Set "trellis.repoPath" in settings to your clone of github.com/HadiAbbasIsDev/Trellis (wiring needs its scripts/wire.mjs and hook scripts).',
-        );
-        return;
-      }
-      execFile('node', [script, folder.uri.fsPath, '--hooks'], (err, stdout, stderr) => {
-        if (err) {
-          void vscode.window.showErrorMessage(
-            `Trellis wire failed: ${stderr.trim() || err.message}`,
-          );
-          return;
+      try {
+        const outcome = wireProject(folder.uri.fsPath, wireOptions(context));
+        if (outcome.errors.length > 0) {
+          void vscode.window.showWarningMessage(`Trellis: ${outcome.errors.join(' · ')}`);
         }
-        const summary = stdout.trim().split('\n').filter(Boolean).join(' · ');
-        void vscode.window.showInformationMessage(`Trellis: ${summary || 'project wired.'}`);
+        const summary = outcome.messages.map((m) => m.split(path.sep).pop() ?? m).join(' · ');
+        void vscode.window.showInformationMessage(`Trellis: ${summary || 'project wired.'} Restart agent sessions to pick it up.`);
         void refresh();
-      });
+      } catch (err) {
+        void vscode.window.showErrorMessage(`Trellis wire failed: ${(err as Error).message}`);
+      }
     }),
 
     vscode.commands.registerCommand('trellis.openVault', () => {
@@ -279,6 +286,22 @@ export function activate(context: vscode.ExtensionContext): void {
 
   setupWatchers();
   void refresh();
+
+  // Extension updates move the install dir, silently orphaning wired configs.
+  // Repair anything recognizably ours whose recorded path no longer exists.
+  const folder = vscode.workspace.workspaceFolders?.[0];
+  if (folder) {
+    try {
+      const repaired = repairStalePaths(folder.uri.fsPath, wireOptions(context));
+      if (repaired.messages.length > 0) {
+        void vscode.window.showInformationMessage(
+          `Trellis: ${repaired.messages.join(' · ')} — restart agent sessions to pick it up.`,
+        );
+      }
+    } catch {
+      /* repair is best-effort by design */
+    }
+  }
 }
 
 export function deactivate(): void {

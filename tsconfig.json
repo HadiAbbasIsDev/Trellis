@@ -11,7 +11,8 @@
     "noEmit": true,
     "types": ["node"],
     "paths": {
-      "@trellis/core": ["./packages/core/src/index.ts"]
+      "@trellis/core": ["./packages/core/src/index.ts"],
+      "@trellis/wiring": ["./packages/wiring/src/index.ts"]
     }
   },
   "include": ["packages/*/src/**/*.ts", "packages/*/test/**/*.ts", "scripts/**/*.ts"]

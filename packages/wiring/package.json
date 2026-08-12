@@ -1,0 +1,6 @@
+{
+  "name": "@trellis/wiring",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Project wiring shared by the CLI (scripts/wire.mjs) and the VS Code extension — one implementation, zero drift"
+}

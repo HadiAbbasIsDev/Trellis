@@ -44,7 +44,7 @@
         "trellis.repoPath": {
           "type": "string",
           "default": "",
-          "markdownDescription": "Path to your local Trellis checkout (clone of `github.com/HadiAbbasIsDev/Trellis`). Needed by **Trellis: Wire This Project**, which runs the checkout's `scripts/wire.mjs` and registers its hook scripts."
+          "markdownDescription": "Optional override: path to a local Trellis checkout. When set, **Trellis: Wire This Project** points configs at the checkout's server and hook scripts instead of the copies bundled inside the extension \u2014 useful for developing Trellis itself. Leave empty for normal use."
         }
       }
     }
