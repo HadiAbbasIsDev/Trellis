@@ -1,0 +1,11 @@
+{
+  "name": "@trellis/mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Stdio MCP server exposing the Trellis memory graph to any MCP client",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@trellis/core": "*",
+    "zod": "^3.23.8"
+  }
+}

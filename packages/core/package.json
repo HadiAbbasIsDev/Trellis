@@ -1,0 +1,9 @@
+{
+  "name": "@trellis/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Vault I/O, typed memory graph, BM25 index, and budgeted retrieval",
+  "dependencies": {
+    "yaml": "^2.5.0"
+  }
+}

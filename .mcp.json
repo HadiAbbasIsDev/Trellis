@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "trellis": {
+      "command": "node",
+      "args": [
+        "/home/it-admin/Desktop/Memory-Management/packages/mcp/dist/server.js"
+      ]
+    }
+  }
+}
