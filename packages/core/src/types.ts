@@ -48,6 +48,13 @@ export interface MemoryNode {
   edges: Edge[];
   body: string; // markdown, may contain [[wikilinks]]; Relations section excluded
   path: string; // absolute file path on disk
+  /**
+   * Frontmatter keys we don't define (Obsidian aliases, cssclasses, user
+   * metadata) — preserved verbatim through every rewrite. Without this, any
+   * update path that serializes the node silently strips hand-authored
+   * metadata (proven by review).
+   */
+  extra?: Record<string, unknown>;
 }
 
 export interface NodeInput {

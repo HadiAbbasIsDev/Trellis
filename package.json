@@ -12,7 +12,14 @@
     "test": "vitest run",
     "smoke": "node scripts/smoke.mjs",
     "seed": "tsx scripts/seed.ts",
-    "wire": "node scripts/wire.mjs"
+    "graph": "tsx scripts/graph.ts",
+    "wire": "node scripts/wire.mjs",
+    "doctor": "tsx scripts/doctor.ts",
+    "eval": "tsx packages/eval/src/run.ts",
+    "eval:gen": "tsx packages/eval/src/gen.ts",
+    "selftest:hooks": "node scripts/hooks/selftest.mjs",
+    "ext:build": "node packages/vscode-ext/build.mjs",
+    "ext:package": "npm --prefix packages/vscode-ext exec @vscode/vsce -- package --no-dependencies"
   },
   "devDependencies": {
     "@types/node": "^20.14.0",

@@ -119,7 +119,11 @@ export function parseNodeFile(
   const base = filePath.replace(/\\/g, '/').split('/').pop()!.replace(/\.md$/i, '');
   const id = asString(data.id, base);
   const cleanBody = stripRelationsSection(body).trim();
+  const extra = Object.fromEntries(
+    Object.entries(data).filter(([k]) => !CANONICAL_KEYS.has(k)),
+  );
   return {
+    ...(Object.keys(extra).length > 0 ? { extra } : {}),
     id,
     type: data.type,
     title: asString(data.title, base),
@@ -135,8 +139,13 @@ export function parseNodeFile(
   };
 }
 
+const CANONICAL_KEYS = new Set([
+  'id', 'type', 'title', 'summary', 'confidence', 'tags',
+  'created', 'updated', 'last_confirmed', 'edges',
+]);
+
 export function serializeNode(n: MemoryNode): string {
-  const fm = {
+  const fm: Record<string, unknown> = {
     id: n.id,
     type: n.type,
     title: n.title,
@@ -148,6 +157,10 @@ export function serializeNode(n: MemoryNode): string {
     last_confirmed: n.last_confirmed,
     edges: n.edges.map((e) => ({ rel: e.rel, to: e.to })),
   };
+  // user-authored keys ride along after ours; canonical keys always win
+  for (const [k, v] of Object.entries(n.extra ?? {})) {
+    if (!CANONICAL_KEYS.has(k)) fm[k] = v;
+  }
   let out = `---\n${YAML.stringify(fm)}---\n\n`;
   const body = n.body.trim();
   if (body) out += `${body}\n`;

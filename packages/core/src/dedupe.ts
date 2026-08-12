@@ -21,10 +21,12 @@ export function findNearDuplicates(
   summary: string,
   threshold = 0.5,
   limit = 3,
+  // Callers scanning every node (doctor) pass this precomputed: rebuilding it
+  // per call turned an O(n²) scan into O(n²·E) — 9.4s of a 9.6s doctor run.
+  superseded: Map<string, string> = buildSupersededBy(vault),
 ): DuplicateCandidate[] {
   const a = new Set(tokenize(`${title} ${summary}`));
   if (a.size === 0) return [];
-  const superseded = buildSupersededBy(vault);
   const out: DuplicateCandidate[] = [];
   for (const n of vault.nodes.values()) {
     if (n.type !== type) continue;

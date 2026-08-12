@@ -1,0 +1,10 @@
+{
+  "name": "@trellis/eval",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Phase 1 gate: budgeted retrieval vs a grep baseline on a benchmark vault",
+  "scripts": {
+    "gen": "tsx src/gen.ts",
+    "eval": "tsx src/run.ts"
+  }
+}

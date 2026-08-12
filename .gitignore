@@ -3,3 +3,7 @@ dist/
 *.log
 .smoke-vault*/
 coverage/
+trellis-graph.html
+.trellis/.stats/
+.trellis/.journal/
+*.vsix

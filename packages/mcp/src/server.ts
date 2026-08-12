@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
@@ -22,7 +23,7 @@ import {
   type Edge,
   type LoadedVault,
 } from '@trellis/core';
-import { footer, renderNode, renderSearch, type SessionState } from './format';
+import { estimateTokens, footer, renderNode, renderSearch, type SessionState } from './format';
 
 const VERSION = '0.1.0';
 
@@ -66,6 +67,37 @@ function text(s: string, isError = false) {
   return { content: [{ type: 'text' as const, text: s }], ...(isError ? { isError: true } : {}) };
 }
 
+/**
+ * Stats feed (rung 2.5) — INTERFACE CONTRACT with the VS Code meter: one JSON
+ * line per successful tool call in <vault>/.stats/log.jsonl, shape
+ * {ts, tool, tokens, pid}. Strictly best-effort: a full disk or bad perms must
+ * never fail the tool call itself. The .stats dot-dir is already invisible to
+ * loadVault, so the feed can't leak into the graph.
+ */
+function logStats(tool: string, responseText: string): void {
+  try {
+    const dir = path.join(VAULT_DIR, '.stats');
+    fs.mkdirSync(dir, { recursive: true });
+    fs.appendFileSync(
+      path.join(dir, 'log.jsonl'),
+      JSON.stringify({
+        ts: new Date().toISOString(),
+        tool,
+        tokens: estimateTokens(responseText),
+        pid: process.pid,
+      }) + '\n',
+    );
+  } catch {
+    /* best-effort by design */
+  }
+}
+
+/** Success-path reply: record the stats line, then answer. Error paths use text(s, true) directly and stay out of the feed. */
+function reply(tool: string, s: string) {
+  logStats(tool, s);
+  return text(s);
+}
+
 const server = new McpServer({ name: 'trellis', version: VERSION });
 
 // ---------------------------------------------------------------- search
@@ -89,7 +121,7 @@ server.registerTool(
       const index = buildIndex(vault);
       const result = retrieve(vault, index, query, { types });
       session.searches++;
-      return text(renderSearch(result, budget_tokens ?? 1500, session));
+      return reply('memory_search', renderSearch(result, budget_tokens ?? 1500, session));
     } catch (err) {
       return text(`memory_search failed: ${(err as Error).message}`, true);
     }
@@ -124,7 +156,7 @@ server.registerTool(
       const parts = [...found];
       if (missing.length > 0) parts.push(`not found: ${missing.join(', ')}`);
       parts.push(footer(session));
-      return text(parts.join('\n\n'));
+      return reply('memory_expand', parts.join('\n\n'));
     } catch (err) {
       return text(`memory_expand failed: ${(err as Error).message}`, true);
     }
@@ -219,7 +251,7 @@ server.registerTool(
       }
       notes.push(`graph: ${vault.nodes.size} nodes, ${countEdges(vault)} edges`);
       notes.push(footer(session));
-      return text(notes.join('\n'));
+      return reply('memory_write', notes.join('\n'));
     } catch (err) {
       return text(`memory_write failed: ${(err as Error).message}`, true);
     }
@@ -248,7 +280,7 @@ server.registerTool(
       if (!dst) return text(`memory_link: target "${to}" not found.`, true);
       if (src.id === dst.id) return text('memory_link: cannot link a node to itself.', true);
       if (src.edges.some((e) => e.rel === rel && e.to === dst.id)) {
-        return text(`edge already exists: [${src.id}] ${rel} → [${dst.id}]\n${footer(session)}`);
+        return reply('memory_link', `edge already exists: [${src.id}] ${rel} → [${dst.id}]\n${footer(session)}`);
       }
       if (rel === 'supersedes' && supersedesWouldCycle(vault, src.id, dst.id)) {
         return text(
@@ -264,7 +296,7 @@ server.registerTool(
       const extra = rel === 'supersedes'
         ? ` — [${dst.id}] is now hidden from retrieval in favor of [${src.id}]`
         : '';
-      return text(`linked: [${src.id}] ${rel} → [${dst.id}]${extra}\n${footer(session)}`);
+      return reply('memory_link', `linked: [${src.id}] ${rel} → [${dst.id}]${extra}\n${footer(session)}`);
     } catch (err) {
       return text(`memory_link failed: ${(err as Error).message}`, true);
     }

@@ -1,0 +1,60 @@
+{
+  "name": "trellis-memory",
+  "displayName": "Trellis Memory Graph",
+  "description": "Live graph of your project's Trellis memory vault, plus node count and today's token spend in the status bar.",
+  "version": "0.1.0",
+  "publisher": "trellis-dev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HadiAbbasIsDev/Trellis"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:trellis.showGraph",
+    "onCommand:trellis.wireProject",
+    "onCommand:trellis.openVault"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "trellis.showGraph",
+        "title": "Trellis: Show Memory Graph"
+      },
+      {
+        "command": "trellis.wireProject",
+        "title": "Trellis: Wire This Project"
+      },
+      {
+        "command": "trellis.openVault",
+        "title": "Trellis: Open Vault Folder"
+      }
+    ],
+    "configuration": {
+      "title": "Trellis",
+      "properties": {
+        "trellis.repoPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Path to your local Trellis checkout (clone of `github.com/HadiAbbasIsDev/Trellis`). Needed by **Trellis: Wire This Project**, which runs the checkout's `scripts/wire.mjs` and registers its hook scripts."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "node build.mjs",
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "@types/vscode": "1.85.0",
+    "@vscode/vsce": "^3.0.0"
+  }
+}

@@ -258,6 +258,28 @@ describe('round 2: re-attack findings', () => {
   });
 });
 
+describe('round 3: user frontmatter preservation', () => {
+  it('unknown frontmatter keys (Obsidian aliases etc.) survive parse -> serialize', () => {
+    const raw = '---\nid: n1\ntype: decision\ntitle: t\nsummary: s\naliases: [my-alias]\npriority: high\n---\nbody\n';
+    const parsed = parseNodeFile('/x/n1.md', raw, NOW, [])!;
+    expect(parsed.extra).toEqual({ aliases: ['my-alias'], priority: 'high' });
+    const out = serializeNode(parsed);
+    expect(out).toContain('aliases:');
+    expect(out).toContain('priority: high');
+    const again = parseNodeFile('/x/n1.md', out, NOW, [])!;
+    expect(again.extra).toEqual(parsed.extra);
+    expect(serializeNode(again)).toBe(out); // stable
+  });
+
+  it('extra keys can never shadow canonical keys', () => {
+    const n = mk('n2', { extra: { id: 'EVIL', type: 'gotcha', custom: 1 } });
+    const parsed = parseNodeFile('/x/n2.md', serializeNode(n), NOW, [])!;
+    expect(parsed.id).toBe('n2');
+    expect(parsed.type).toBe('decision');
+    expect(parsed.extra).toEqual({ custom: 1 });
+  });
+});
+
 describe('vault lock', () => {
   it('serializes competing critical sections', async () => {
     const dir = tmpVault();

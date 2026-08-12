@@ -1,0 +1,5947 @@
+{
+  "generatedAt": "2026-08-12T10:32:46.755Z",
+  "now": "2026-08-12T00:00:00.000Z",
+  "vault": {
+    "dir": "/home/it-admin/Desktop/Memory-Management/packages/eval/bench-vault",
+    "nodes": 64,
+    "edges": 47,
+    "superseded": 4
+  },
+  "budgets": [
+    500,
+    1500,
+    3000
+  ],
+  "questionCounts": {
+    "lookup": 30,
+    "multi-hop": 9,
+    "superseded": 6,
+    "negative": 5
+  },
+  "perBudget": [
+    {
+      "budget": 500,
+      "trellis": {
+        "hitRate": 0.96,
+        "hitRateByType": {
+          "lookup": 0.9666666666666667,
+          "multi-hop": 1,
+          "superseded": 1,
+          "negative": 0.8
+        },
+        "mrr": 0.772962962962963,
+        "meanTokens": 400.04,
+        "leakRate": 0
+      },
+      "grep": {
+        "hitRate": 0.74,
+        "hitRateByType": {
+          "lookup": 0.9333333333333333,
+          "multi-hop": 0,
+          "superseded": 0.8333333333333334,
+          "negative": 0.8
+        },
+        "mrr": 0.6777777777777778,
+        "meanTokens": 352.28,
+        "leakRate": 1
+      },
+      "questions": [
+        {
+          "id": "L01",
+          "type": "lookup",
+          "query": "why fastify over express",
+          "expect": [
+            "fastify-over-express-for-api"
+          ],
+          "trellis": {
+            "ids": [
+              "fastify-over-express-for-api",
+              "api-gateway-service",
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage"
+            ],
+            "tokens": 307,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "fastify-over-express-for-api",
+              "api-gateway-service"
+            ],
+            "tokens": 311,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L02",
+          "type": "lookup",
+          "query": "stripe webhook signature verification",
+          "expect": [
+            "webhook-dispatcher"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service"
+            ],
+            "tokens": 457,
+            "hit": true,
+            "rank": 5,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "webhook-dispatcher"
+            ],
+            "tokens": 389,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L03",
+          "type": "lookup",
+          "query": "duplicate invoice rows webhook retry",
+          "expect": [
+            "stripe-webhook-retry-created-duplicate-invoice-rows",
+            "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 454,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+            ],
+            "tokens": 384,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L04",
+          "type": "lookup",
+          "query": "default exports or named exports",
+          "expect": [
+            "no-default-exports",
+            "avoid-default-exports-in-shared-packages"
+          ],
+          "trellis": {
+            "ids": [
+              "avoid-default-exports-in-shared-packages",
+              "no-default-exports",
+              "eu-tenant-data-stays-in-eu-region",
+              "read-replica-for-reporting-queries",
+              "tenant-provisioner",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "reporting-pipeline",
+              "bullmq-on-redis-for-background-jobs",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+            ],
+            "tokens": 486,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "no-default-exports",
+              "avoid-default-exports-in-shared-packages",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 301,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L05",
+          "type": "lookup",
+          "query": "pgbouncer prepared statement does not exist",
+          "expect": [
+            "pgbouncer-transaction-mode-breaks-prepared-statements"
+          ],
+          "trellis": {
+            "ids": [
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "read-replica-for-reporting-queries",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "kysely-over-prisma-for-database-access",
+              "scheduler-engine",
+              "session-2026-01-22-schedule-normalization",
+              "coverage-gap"
+            ],
+            "tokens": 492,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 310,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L06",
+          "type": "lookup",
+          "query": "background jobs library",
+          "expect": [
+            "bullmq-on-redis-for-background-jobs"
+          ],
+          "trellis": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "bullmq-on-redis-for-background-jobs",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "dst-change-fired-rota-reminders-twice",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "webhook-dispatcher",
+              "notification-worker",
+              "redis-cache-layer"
+            ],
+            "tokens": 457,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "bullmq-on-redis-for-background-jobs",
+              "redis-allkeys-lru-evicted-bullmq-jobs"
+            ],
+            "tokens": 336,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L07",
+          "type": "lookup",
+          "query": "what is a tenant in the data model",
+          "expect": [
+            "tenant"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant",
+              "saml-clock-skew-rejected-assertions",
+              "tenant-provisioner",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "read-replica-for-reporting-queries",
+              "auth-service",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 468,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant",
+              "tenant-provisioner",
+              "auth-service"
+            ],
+            "tokens": 449,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L08",
+          "type": "lookup",
+          "query": "seat billable subscription quantity",
+          "expect": [
+            "seat"
+          ],
+          "trellis": {
+            "ids": [
+              "seat",
+              "per-seat-pricing-with-monthly-true-up",
+              "subscription-wording-cancel-not-delete",
+              "billing-service",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent"
+            ],
+            "tokens": 487,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service",
+              "instant-proration-on-seat-updates"
+            ],
+            "tokens": 488,
+            "hit": false,
+            "rank": null,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "L09",
+          "type": "lookup",
+          "query": "coverage gap staffing minimum",
+          "expect": [
+            "coverage-gap"
+          ],
+          "trellis": {
+            "ids": [
+              "coverage-gap",
+              "scheduler-engine",
+              "postgres-primary-cluster",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline",
+              "payroll-export"
+            ],
+            "tokens": 296,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "coverage-gap",
+              "reporting-pipeline"
+            ],
+            "tokens": 278,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L10",
+          "type": "lookup",
+          "query": "grace window late clock in",
+          "expect": [
+            "grace-window"
+          ],
+          "trellis": {
+            "ids": [
+              "grace-window",
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "read-replica-for-reporting-queries",
+              "session-2026-01-22-schedule-normalization",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "api-gateway-service",
+              "normalize-schedule-tables-drop-jsonb"
+            ],
+            "tokens": 447,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "grace-window",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements"
+            ],
+            "tokens": 452,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L11",
+          "type": "lookup",
+          "query": "payroll export csv format",
+          "expect": [
+            "payroll-export"
+          ],
+          "trellis": {
+            "ids": [
+              "payroll-export",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "public-api-v1-is-frozen",
+              "scheduler-engine"
+            ],
+            "tokens": 421,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "payroll-export",
+              "no-default-exports",
+              "reporting-pipeline",
+              "avoid-default-exports-in-shared-packages"
+            ],
+            "tokens": 410,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L12",
+          "type": "lookup",
+          "query": "swap request manager approval",
+          "expect": [
+            "swap-request"
+          ],
+          "trellis": {
+            "ids": [
+              "swap-request",
+              "dst-change-fired-rota-reminders-twice",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "mobile-push-gateway",
+              "blue-green-deploys-on-ecs",
+              "bullmq-on-redis-for-background-jobs",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 483,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "swap-request",
+              "notification-worker",
+              "admin-dashboard"
+            ],
+            "tokens": 359,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L13",
+          "type": "lookup",
+          "query": "what is a rota",
+          "expect": [
+            "rota"
+          ],
+          "trellis": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "rota",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-05-07-dst-incident",
+              "admin-dashboard",
+              "session-2026-01-22-schedule-normalization",
+              "notification-worker",
+              "scheduler-engine",
+              "pgbouncer-transaction-mode-breaks-prepared-statements"
+            ],
+            "tokens": 484,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "admin-dashboard",
+              "dst-change-fired-rota-reminders-twice"
+            ],
+            "tokens": 497,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L14",
+          "type": "lookup",
+          "query": "commit message format convention",
+          "expect": [
+            "conventional-commits-with-scope"
+          ],
+          "trellis": {
+            "ids": [
+              "payroll-export",
+              "soc2-audit-trail-for-admin-actions",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline"
+            ],
+            "tokens": 240,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "conventional-commits-with-scope",
+              "payroll-export",
+              "soc2-audit-trail-for-admin-actions"
+            ],
+            "tokens": 300,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L15",
+          "type": "lookup",
+          "query": "are migrations hand written or generated",
+          "expect": [
+            "sql-migrations-written-by-hand"
+          ],
+          "trellis": {
+            "ids": [
+              "sql-migrations-written-by-hand",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "session-2026-01-22-schedule-normalization",
+              "rota"
+            ],
+            "tokens": 449,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sql-migrations-written-by-hand",
+              "kysely-over-prisma-for-database-access",
+              "stripe-webhooks-must-be-idempotent"
+            ],
+            "tokens": 418,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L16",
+          "type": "lookup",
+          "query": "testing style mocks or testcontainers",
+          "expect": [
+            "integration-tests-over-mocked-units"
+          ],
+          "trellis": {
+            "ids": [
+              "integration-tests-over-mocked-units",
+              "avoid-default-exports-in-shared-packages",
+              "no-default-exports",
+              "conventional-commits-with-scope",
+              "sql-migrations-written-by-hand"
+            ],
+            "tokens": 286,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "integration-tests-over-mocked-units",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope",
+              "no-default-exports",
+              "sql-migrations-written-by-hand"
+            ],
+            "tokens": 462,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L17",
+          "type": "lookup",
+          "query": "cancel versus delete wording subscriptions",
+          "expect": [
+            "subscription-wording-cancel-not-delete"
+          ],
+          "trellis": {
+            "ids": [
+              "subscription-wording-cancel-not-delete",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-disagreed-on-proration-rounding",
+              "seat"
+            ],
+            "tokens": 487,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "subscription-wording-cancel-not-delete",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-for-subscription-billing"
+            ],
+            "tokens": 335,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L18",
+          "type": "lookup",
+          "query": "audit trail for admin actions",
+          "expect": [
+            "soc2-audit-trail-for-admin-actions"
+          ],
+          "trellis": {
+            "ids": [
+              "soc2-audit-trail-for-admin-actions",
+              "admin-dashboard",
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 209,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "soc2-audit-trail-for-admin-actions",
+              "admin-dashboard",
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 360,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L19",
+          "type": "lookup",
+          "query": "pii in logs policy",
+          "expect": [
+            "pii-never-in-logs-or-analytics"
+          ],
+          "trellis": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "pii-never-in-logs-or-analytics",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "secrets-live-in-ssm-not-the-repo",
+              "redis-cache-layer",
+              "bullmq-on-redis-for-background-jobs",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "notification-worker",
+              "webhook-dispatcher"
+            ],
+            "tokens": 477,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "pii-never-in-logs-or-analytics",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "redis-cache-layer"
+            ],
+            "tokens": 443,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L20",
+          "type": "lookup",
+          "query": "breaking changes public api v1",
+          "expect": [
+            "public-api-v1-is-frozen"
+          ],
+          "trellis": {
+            "ids": [
+              "public-api-v1-is-frozen",
+              "api-gateway-service",
+              "saml-clock-skew-rejected-assertions",
+              "subscription-wording-cancel-not-delete",
+              "fastify-over-express-for-api",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "integration-tests-over-mocked-units"
+            ],
+            "tokens": 439,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "public-api-v1-is-frozen",
+              "api-gateway-service",
+              "fastify-over-express-for-api"
+            ],
+            "tokens": 430,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L21",
+          "type": "lookup",
+          "query": "where are secrets stored",
+          "expect": [
+            "secrets-live-in-ssm-not-the-repo"
+          ],
+          "trellis": {
+            "ids": [
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "coverage-gap",
+              "session-2026-03-14-deploy-pipeline",
+              "conventional-commits-with-scope",
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "scheduler-engine",
+              "webhook-dispatcher"
+            ],
+            "tokens": 476,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "secrets-live-in-ssm-not-the-repo",
+              "auth-service",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope"
+            ],
+            "tokens": 399,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L22",
+          "type": "lookup",
+          "query": "eu data residency frankfurt",
+          "expect": [
+            "eu-tenant-data-stays-in-eu-region"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant-provisioner",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "tenant",
+              "subscription-wording-cancel-not-delete",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "read-replica-for-reporting-queries",
+              "pii-never-in-logs-or-analytics",
+              "stripe-for-subscription-billing"
+            ],
+            "tokens": 486,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "kysely-camelcase-plugin-breaks-raw-sql"
+            ],
+            "tokens": 479,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L23",
+          "type": "lookup",
+          "query": "feature flags launchdarkly",
+          "expect": [
+            "feature-flags-in-postgres-not-launchdarkly"
+          ],
+          "trellis": {
+            "ids": [
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 134,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 135,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L24",
+          "type": "lookup",
+          "query": "why not prisma",
+          "expect": [
+            "kysely-over-prisma-for-database-access"
+          ],
+          "trellis": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 269,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "kysely-over-prisma-for-database-access",
+              "kysely-camelcase-plugin-breaks-raw-sql"
+            ],
+            "tokens": 301,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L25",
+          "type": "lookup",
+          "query": "transactional email provider",
+          "expect": [
+            "sendgrid-for-transactional-email"
+          ],
+          "trellis": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "sendgrid-for-transactional-email",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "mobile-push-gateway",
+              "payroll-export",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request"
+            ],
+            "tokens": 473,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sendgrid-for-transactional-email",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker"
+            ],
+            "tokens": 479,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L26",
+          "type": "lookup",
+          "query": "reporting queries read replica",
+          "expect": [
+            "read-replica-for-reporting-queries"
+          ],
+          "trellis": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "reporting-pipeline",
+              "postgres-primary-cluster",
+              "payroll-export",
+              "scheduler-engine",
+              "session-2026-01-22-schedule-normalization",
+              "httponly-session-cookies-replace-jwt-localstorage"
+            ],
+            "tokens": 494,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "reporting-pipeline",
+              "read-replica-for-reporting-queries"
+            ],
+            "tokens": 322,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L27",
+          "type": "lookup",
+          "query": "blue green deploy rollback",
+          "expect": [
+            "blue-green-deploys-on-ecs"
+          ],
+          "trellis": {
+            "ids": [
+              "blue-green-deploys-on-ecs",
+              "session-2026-03-14-deploy-pipeline",
+              "ecs-drain-cut-long-lived-websockets",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-for-transactional-email",
+              "pii-never-in-logs-or-analytics",
+              "notification-worker"
+            ],
+            "tokens": 473,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "blue-green-deploys-on-ecs",
+              "ecs-drain-cut-long-lived-websockets",
+              "session-2026-03-14-deploy-pipeline"
+            ],
+            "tokens": 476,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L28",
+          "type": "lookup",
+          "query": "reminders fired twice daylight saving",
+          "expect": [
+            "dst-change-fired-rota-reminders-twice"
+          ],
+          "trellis": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "session-2026-05-07-dst-incident",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 492,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "redis-allkeys-lru-evicted-bullmq-jobs"
+            ],
+            "tokens": 402,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L29",
+          "type": "lookup",
+          "query": "staging sent no email sendgrid sandbox",
+          "expect": [
+            "sendgrid-sandbox-mode-swallowed-staging-email"
+          ],
+          "trellis": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-for-transactional-email",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "no-default-exports",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 491,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "sendgrid-for-transactional-email",
+              "notification-worker"
+            ],
+            "tokens": 479,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L30",
+          "type": "lookup",
+          "query": "camelcase plugin raw sql columns",
+          "expect": [
+            "kysely-camelcase-plugin-breaks-raw-sql"
+          ],
+          "trellis": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "sql-migrations-written-by-hand",
+              "postgres-primary-cluster",
+              "fastify-over-express-for-api",
+              "api-gateway-service",
+              "auth-service"
+            ],
+            "tokens": 433,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "sql-migrations-written-by-hand",
+              "kysely-over-prisma-for-database-access"
+            ],
+            "tokens": 413,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M01",
+          "type": "multi-hop",
+          "query": "when was the websocket drain problem fixed",
+          "expect": [
+            "session-2026-03-14-deploy-pipeline"
+          ],
+          "trellis": {
+            "ids": [
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher"
+            ],
+            "tokens": 482,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "ecs-drain-cut-long-lived-websockets",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+            ],
+            "tokens": 373,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M02",
+          "type": "multi-hop",
+          "query": "backfilled 41 million rows zero downtime what changed",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "session-2026-01-22-schedule-normalization",
+              "normalize-schedule-tables-drop-jsonb",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "rota",
+              "stripe-webhooks-must-be-idempotent",
+              "webhook-dispatcher"
+            ],
+            "tokens": 467,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "session-2026-01-22-schedule-normalization",
+              "session-2025-12-10-billing-hardening",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+            ],
+            "tokens": 414,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M03",
+          "type": "multi-hop",
+          "query": "invoices off by one cent failed reconciliation what did we change",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-disagreed-on-proration-rounding",
+              "per-seat-pricing-with-monthly-true-up",
+              "saml-clock-skew-rejected-assertions",
+              "dst-change-fired-rota-reminders-twice",
+              "session-2026-05-07-dst-incident",
+              "billing-service",
+              "stripe-for-subscription-billing",
+              "seat",
+              "webhook-dispatcher"
+            ],
+            "tokens": 484,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-disagreed-on-proration-rounding",
+              "tenant-provisioner",
+              "shift"
+            ],
+            "tokens": 409,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M04",
+          "type": "multi-hop",
+          "query": "customer idp clock skew what was affected",
+          "expect": [
+            "auth-service"
+          ],
+          "trellis": {
+            "ids": [
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "grace-window",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "api-gateway-service",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "session-2026-05-07-dst-incident",
+              "dst-change-fired-rota-reminders-twice",
+              "webhook-dispatcher"
+            ],
+            "tokens": 488,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "saml-clock-skew-rejected-assertions",
+              "eu-tenant-data-stays-in-eu-region",
+              "grace-window",
+              "instant-proration-on-seat-updates"
+            ],
+            "tokens": 494,
+            "hit": false,
+            "rank": null,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "M05",
+          "type": "multi-hop",
+          "query": "queue keys silently evicted where do they live",
+          "expect": [
+            "redis-cache-layer"
+          ],
+          "trellis": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "redis-cache-layer",
+              "session-2026-03-14-deploy-pipeline",
+              "secrets-live-in-ssm-not-the-repo",
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "bullmq-on-redis-for-background-jobs",
+              "coverage-gap"
+            ],
+            "tokens": 492,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "ecs-drain-cut-long-lived-websockets"
+            ],
+            "tokens": 412,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M06",
+          "type": "multi-hop",
+          "query": "frankfurt pinning enforced at signup",
+          "expect": [
+            "tenant-provisioner"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant-provisioner",
+              "tenant"
+            ],
+            "tokens": 190,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region"
+            ],
+            "tokens": 138,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M07",
+          "type": "multi-hop",
+          "query": "employee trades an assigned shift who gets told",
+          "expect": [
+            "notification-worker"
+          ],
+          "trellis": {
+            "ids": [
+              "shift",
+              "swap-request",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "sendgrid-for-transactional-email",
+              "seat"
+            ],
+            "tokens": 492,
+            "hit": true,
+            "rank": 4,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "shift",
+              "swap-request",
+              "rota",
+              "nightly-scrubbed-production-snapshot-for-staging"
+            ],
+            "tokens": 393,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M08",
+          "type": "multi-hop",
+          "query": "staffing below minimum who computes it",
+          "expect": [
+            "scheduler-engine"
+          ],
+          "trellis": {
+            "ids": [
+              "coverage-gap",
+              "scheduler-engine",
+              "postgres-primary-cluster",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "webhook-dispatcher"
+            ],
+            "tokens": 407,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "coverage-gap",
+              "per-seat-pricing-with-monthly-true-up"
+            ],
+            "tokens": 337,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M09",
+          "type": "multi-hop",
+          "query": "why is the staging snapshot scrubbed",
+          "expect": [
+            "pii-never-in-logs-or-analytics"
+          ],
+          "trellis": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "pii-never-in-logs-or-analytics",
+              "sendgrid-for-transactional-email",
+              "notification-worker",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 363,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 458,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "S01",
+          "type": "superseded",
+          "query": "should we store schedules in mongodb",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "rota",
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-webhooks-must-be-idempotent",
+              "billing-service"
+            ],
+            "tokens": 499,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "move-schedules-to-postgres-jsonb",
+              "mongodb-for-flexible-schedule-documents"
+            ],
+            "tokens": 354,
+            "hit": false,
+            "rank": null,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb",
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "S02",
+          "type": "superseded",
+          "query": "schedule storage jsonb columns",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "rota",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "saml-clock-skew-rejected-assertions",
+              "dst-change-fired-rota-reminders-twice",
+              "session-2025-11-03-auth-migration"
+            ],
+            "tokens": 480,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "move-schedules-to-postgres-jsonb"
+            ],
+            "tokens": 423,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb"
+            ]
+          }
+        },
+        {
+          "id": "S03",
+          "type": "superseded",
+          "query": "where do we keep auth tokens localstorage",
+          "expect": [
+            "httponly-session-cookies-replace-jwt-localstorage"
+          ],
+          "trellis": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "saml-clock-skew-rejected-assertions",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "api-gateway-service",
+              "coverage-gap",
+              "conventional-commits-with-scope",
+              "fastify-over-express-for-api",
+              "scheduler-engine",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 492,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "jwt-in-localstorage-for-spa-auth",
+              "session-2025-11-03-auth-migration"
+            ],
+            "tokens": 461,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "jwt-in-localstorage-for-spa-auth"
+            ]
+          }
+        },
+        {
+          "id": "S04",
+          "type": "superseded",
+          "query": "jwt storage for the spa",
+          "expect": [
+            "httponly-session-cookies-replace-jwt-localstorage"
+          ],
+          "trellis": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "saml-clock-skew-rejected-assertions",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "session-2026-01-22-schedule-normalization",
+              "api-gateway-service",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "rota"
+            ],
+            "tokens": 497,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "jwt-in-localstorage-for-spa-auth"
+            ],
+            "tokens": 351,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "jwt-in-localstorage-for-spa-auth"
+            ]
+          }
+        },
+        {
+          "id": "S05",
+          "type": "superseded",
+          "query": "prorate seat changes immediately",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "seat",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "eu-tenant-data-stays-in-eu-region"
+            ],
+            "tokens": 485,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "instant-proration-on-seat-updates",
+              "per-seat-pricing-with-monthly-true-up"
+            ],
+            "tokens": 339,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "S06",
+          "type": "superseded",
+          "query": "does adding a seat prorate the current invoice",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "seat",
+              "stripe-webhooks-must-be-idempotent",
+              "billing-service",
+              "webhook-dispatcher"
+            ],
+            "tokens": 497,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "instant-proration-on-seat-updates",
+              "per-seat-pricing-with-monthly-true-up"
+            ],
+            "tokens": 339,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "N01",
+          "type": "negative",
+          "query": "kubernetes ingress certificate renewal",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N02",
+          "type": "negative",
+          "query": "webpack vendor chunk splitting",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N03",
+          "type": "negative",
+          "query": "kafka partition rebalance offsets",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N04",
+          "type": "negative",
+          "query": "opentelemetry span sampling",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N05",
+          "type": "negative",
+          "query": "graphql resolver nested queries",
+          "expect": [],
+          "trellis": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "reporting-pipeline",
+              "payroll-export",
+              "scheduler-engine"
+            ],
+            "tokens": 380,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline"
+            ],
+            "tokens": 322,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        }
+      ]
+    },
+    {
+      "budget": 1500,
+      "trellis": {
+        "hitRate": 0.96,
+        "hitRateByType": {
+          "lookup": 0.9666666666666667,
+          "multi-hop": 1,
+          "superseded": 1,
+          "negative": 0.8
+        },
+        "mrr": 0.772962962962963,
+        "meanTokens": 543.6,
+        "leakRate": 0
+      },
+      "grep": {
+        "hitRate": 0.8,
+        "hitRateByType": {
+          "lookup": 1,
+          "multi-hop": 0,
+          "superseded": 1,
+          "negative": 0.8
+        },
+        "mrr": 0.6944444444444444,
+        "meanTokens": 835.56,
+        "leakRate": 1
+      },
+      "questions": [
+        {
+          "id": "L01",
+          "type": "lookup",
+          "query": "why fastify over express",
+          "expect": [
+            "fastify-over-express-for-api"
+          ],
+          "trellis": {
+            "ids": [
+              "fastify-over-express-for-api",
+              "api-gateway-service",
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage"
+            ],
+            "tokens": 307,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "fastify-over-express-for-api",
+              "api-gateway-service",
+              "dst-change-fired-rota-reminders-twice"
+            ],
+            "tokens": 504,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L02",
+          "type": "lookup",
+          "query": "stripe webhook signature verification",
+          "expect": [
+            "webhook-dispatcher"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs",
+              "stripe-disagreed-on-proration-rounding",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "seat",
+              "notification-worker",
+              "redis-cache-layer"
+            ],
+            "tokens": 715,
+            "hit": true,
+            "rank": 5,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "webhook-dispatcher",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-disagreed-on-proration-rounding",
+              "billing-service",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-for-subscription-billing"
+            ],
+            "tokens": 1426,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L03",
+          "type": "lookup",
+          "query": "duplicate invoice rows webhook retry",
+          "expect": [
+            "stripe-webhook-retry-created-duplicate-invoice-rows",
+            "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "seat",
+              "notification-worker",
+              "redis-cache-layer"
+            ],
+            "tokens": 715,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "stripe-webhooks-must-be-idempotent",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs",
+              "dst-change-fired-rota-reminders-twice"
+            ],
+            "tokens": 1448,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L04",
+          "type": "lookup",
+          "query": "default exports or named exports",
+          "expect": [
+            "no-default-exports",
+            "avoid-default-exports-in-shared-packages"
+          ],
+          "trellis": {
+            "ids": [
+              "avoid-default-exports-in-shared-packages",
+              "no-default-exports",
+              "eu-tenant-data-stays-in-eu-region",
+              "read-replica-for-reporting-queries",
+              "tenant-provisioner",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "reporting-pipeline",
+              "bullmq-on-redis-for-background-jobs",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "dst-change-fired-rota-reminders-twice",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "payroll-export",
+              "tenant",
+              "notification-worker",
+              "redis-cache-layer",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "mobile-push-gateway",
+              "postgres-primary-cluster",
+              "stripe-for-subscription-billing",
+              "swap-request",
+              "billing-service",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 1047,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "no-default-exports",
+              "avoid-default-exports-in-shared-packages",
+              "bullmq-on-redis-for-background-jobs",
+              "ecs-drain-cut-long-lived-websockets",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline",
+              "tenant-provisioner"
+            ],
+            "tokens": 961,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L05",
+          "type": "lookup",
+          "query": "pgbouncer prepared statement does not exist",
+          "expect": [
+            "pgbouncer-transaction-mode-breaks-prepared-statements"
+          ],
+          "trellis": {
+            "ids": [
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "read-replica-for-reporting-queries",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "kysely-over-prisma-for-database-access",
+              "scheduler-engine",
+              "session-2026-01-22-schedule-normalization",
+              "coverage-gap",
+              "rota",
+              "reporting-pipeline"
+            ],
+            "tokens": 557,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 310,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L06",
+          "type": "lookup",
+          "query": "background jobs library",
+          "expect": [
+            "bullmq-on-redis-for-background-jobs"
+          ],
+          "trellis": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "bullmq-on-redis-for-background-jobs",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "dst-change-fired-rota-reminders-twice",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "webhook-dispatcher",
+              "notification-worker",
+              "redis-cache-layer",
+              "stripe-webhooks-must-be-idempotent",
+              "mobile-push-gateway",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "swap-request",
+              "sendgrid-for-transactional-email",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "session-2025-12-10-billing-hardening",
+              "seat"
+            ],
+            "tokens": 941,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "bullmq-on-redis-for-background-jobs",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "notification-worker",
+              "redis-cache-layer",
+              "webhook-dispatcher"
+            ],
+            "tokens": 1024,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L07",
+          "type": "lookup",
+          "query": "what is a tenant in the data model",
+          "expect": [
+            "tenant"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant",
+              "saml-clock-skew-rejected-assertions",
+              "tenant-provisioner",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "read-replica-for-reporting-queries",
+              "auth-service",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "api-gateway-service",
+              "scheduler-engine",
+              "session-2026-01-22-schedule-normalization",
+              "session-2025-11-03-auth-migration",
+              "coverage-gap",
+              "fastify-over-express-for-api",
+              "rota",
+              "reporting-pipeline",
+              "kysely-over-prisma-for-database-access"
+            ],
+            "tokens": 892,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant",
+              "tenant-provisioner",
+              "auth-service",
+              "mongodb-for-flexible-schedule-documents",
+              "move-schedules-to-postgres-jsonb",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "api-gateway-service",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "kysely-over-prisma-for-database-access"
+            ],
+            "tokens": 1444,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "mongodb-for-flexible-schedule-documents",
+              "move-schedules-to-postgres-jsonb"
+            ]
+          }
+        },
+        {
+          "id": "L08",
+          "type": "lookup",
+          "query": "seat billable subscription quantity",
+          "expect": [
+            "seat"
+          ],
+          "trellis": {
+            "ids": [
+              "seat",
+              "per-seat-pricing-with-monthly-true-up",
+              "subscription-wording-cancel-not-delete",
+              "billing-service",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 532,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service",
+              "instant-proration-on-seat-updates",
+              "seat",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "subscription-wording-cancel-not-delete",
+              "tenant-provisioner"
+            ],
+            "tokens": 1122,
+            "hit": true,
+            "rank": 4,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "L09",
+          "type": "lookup",
+          "query": "coverage gap staffing minimum",
+          "expect": [
+            "coverage-gap"
+          ],
+          "trellis": {
+            "ids": [
+              "coverage-gap",
+              "scheduler-engine",
+              "postgres-primary-cluster",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline",
+              "payroll-export"
+            ],
+            "tokens": 296,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "coverage-gap",
+              "reporting-pipeline"
+            ],
+            "tokens": 278,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L10",
+          "type": "lookup",
+          "query": "grace window late clock in",
+          "expect": [
+            "grace-window"
+          ],
+          "trellis": {
+            "ids": [
+              "grace-window",
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "read-replica-for-reporting-queries",
+              "session-2026-01-22-schedule-normalization",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "api-gateway-service",
+              "normalize-schedule-tables-drop-jsonb",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "postgres-primary-cluster",
+              "reporting-pipeline",
+              "payroll-export",
+              "rota",
+              "scheduler-engine"
+            ],
+            "tokens": 679,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "grace-window",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "saml-clock-skew-rejected-assertions",
+              "stripe-disagreed-on-proration-rounding",
+              "coverage-gap",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "tenant-provisioner"
+            ],
+            "tokens": 1451,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L11",
+          "type": "lookup",
+          "query": "payroll export csv format",
+          "expect": [
+            "payroll-export"
+          ],
+          "trellis": {
+            "ids": [
+              "payroll-export",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "public-api-v1-is-frozen",
+              "scheduler-engine"
+            ],
+            "tokens": 421,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "payroll-export",
+              "no-default-exports",
+              "reporting-pipeline",
+              "avoid-default-exports-in-shared-packages",
+              "read-replica-for-reporting-queries",
+              "bullmq-on-redis-for-background-jobs",
+              "public-api-v1-is-frozen"
+            ],
+            "tokens": 826,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L12",
+          "type": "lookup",
+          "query": "swap request manager approval",
+          "expect": [
+            "swap-request"
+          ],
+          "trellis": {
+            "ids": [
+              "swap-request",
+              "dst-change-fired-rota-reminders-twice",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "mobile-push-gateway",
+              "blue-green-deploys-on-ecs",
+              "bullmq-on-redis-for-background-jobs",
+              "sendgrid-for-transactional-email",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "ecs-drain-cut-long-lived-websockets",
+              "redis-cache-layer",
+              "webhook-dispatcher",
+              "session-2026-03-14-deploy-pipeline",
+              "api-gateway-service",
+              "saml-clock-skew-rejected-assertions",
+              "fastify-over-express-for-api",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage"
+            ],
+            "tokens": 944,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "swap-request",
+              "notification-worker",
+              "admin-dashboard",
+              "api-gateway-service",
+              "blue-green-deploys-on-ecs",
+              "ecs-drain-cut-long-lived-websockets",
+              "rota"
+            ],
+            "tokens": 967,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L13",
+          "type": "lookup",
+          "query": "what is a rota",
+          "expect": [
+            "rota"
+          ],
+          "trellis": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "rota",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-05-07-dst-incident",
+              "admin-dashboard",
+              "session-2026-01-22-schedule-normalization",
+              "notification-worker",
+              "scheduler-engine",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "mobile-push-gateway",
+              "read-replica-for-reporting-queries",
+              "coverage-gap",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "sendgrid-for-transactional-email",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 752,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "admin-dashboard",
+              "dst-change-fired-rota-reminders-twice",
+              "rota",
+              "bullmq-on-redis-for-background-jobs",
+              "ecs-drain-cut-long-lived-websockets",
+              "mongodb-for-flexible-schedule-documents",
+              "notification-worker",
+              "scheduler-engine",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 1493,
+            "hit": true,
+            "rank": 4,
+            "leaked": [
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "L14",
+          "type": "lookup",
+          "query": "commit message format convention",
+          "expect": [
+            "conventional-commits-with-scope"
+          ],
+          "trellis": {
+            "ids": [
+              "payroll-export",
+              "soc2-audit-trail-for-admin-actions",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline"
+            ],
+            "tokens": 240,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "conventional-commits-with-scope",
+              "payroll-export",
+              "soc2-audit-trail-for-admin-actions"
+            ],
+            "tokens": 300,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L15",
+          "type": "lookup",
+          "query": "are migrations hand written or generated",
+          "expect": [
+            "sql-migrations-written-by-hand"
+          ],
+          "trellis": {
+            "ids": [
+              "sql-migrations-written-by-hand",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "session-2026-01-22-schedule-normalization",
+              "rota"
+            ],
+            "tokens": 449,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sql-migrations-written-by-hand",
+              "kysely-over-prisma-for-database-access",
+              "stripe-webhooks-must-be-idempotent",
+              "webhook-dispatcher",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "api-gateway-service",
+              "move-schedules-to-postgres-jsonb",
+              "redis-allkeys-lru-evicted-bullmq-jobs"
+            ],
+            "tokens": 1364,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb"
+            ]
+          }
+        },
+        {
+          "id": "L16",
+          "type": "lookup",
+          "query": "testing style mocks or testcontainers",
+          "expect": [
+            "integration-tests-over-mocked-units"
+          ],
+          "trellis": {
+            "ids": [
+              "integration-tests-over-mocked-units",
+              "avoid-default-exports-in-shared-packages",
+              "no-default-exports",
+              "conventional-commits-with-scope",
+              "sql-migrations-written-by-hand"
+            ],
+            "tokens": 286,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "integration-tests-over-mocked-units",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope",
+              "no-default-exports",
+              "sql-migrations-written-by-hand"
+            ],
+            "tokens": 462,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L17",
+          "type": "lookup",
+          "query": "cancel versus delete wording subscriptions",
+          "expect": [
+            "subscription-wording-cancel-not-delete"
+          ],
+          "trellis": {
+            "ids": [
+              "subscription-wording-cancel-not-delete",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-disagreed-on-proration-rounding",
+              "seat",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 532,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "subscription-wording-cancel-not-delete",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-for-subscription-billing"
+            ],
+            "tokens": 335,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L18",
+          "type": "lookup",
+          "query": "audit trail for admin actions",
+          "expect": [
+            "soc2-audit-trail-for-admin-actions"
+          ],
+          "trellis": {
+            "ids": [
+              "soc2-audit-trail-for-admin-actions",
+              "admin-dashboard",
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 209,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "soc2-audit-trail-for-admin-actions",
+              "admin-dashboard",
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 360,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L19",
+          "type": "lookup",
+          "query": "pii in logs policy",
+          "expect": [
+            "pii-never-in-logs-or-analytics"
+          ],
+          "trellis": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "pii-never-in-logs-or-analytics",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "secrets-live-in-ssm-not-the-repo",
+              "redis-cache-layer",
+              "bullmq-on-redis-for-background-jobs",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "notification-worker",
+              "webhook-dispatcher"
+            ],
+            "tokens": 477,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "pii-never-in-logs-or-analytics",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "redis-cache-layer",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 563,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L20",
+          "type": "lookup",
+          "query": "breaking changes public api v1",
+          "expect": [
+            "public-api-v1-is-frozen"
+          ],
+          "trellis": {
+            "ids": [
+              "public-api-v1-is-frozen",
+              "api-gateway-service",
+              "saml-clock-skew-rejected-assertions",
+              "subscription-wording-cancel-not-delete",
+              "fastify-over-express-for-api",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "integration-tests-over-mocked-units"
+            ],
+            "tokens": 439,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "public-api-v1-is-frozen",
+              "api-gateway-service",
+              "fastify-over-express-for-api",
+              "integration-tests-over-mocked-units",
+              "postgres-primary-cluster",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "subscription-wording-cancel-not-delete"
+            ],
+            "tokens": 935,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L21",
+          "type": "lookup",
+          "query": "where are secrets stored",
+          "expect": [
+            "secrets-live-in-ssm-not-the-repo"
+          ],
+          "trellis": {
+            "ids": [
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "coverage-gap",
+              "session-2026-03-14-deploy-pipeline",
+              "conventional-commits-with-scope",
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "scheduler-engine",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-for-subscription-billing",
+              "postgres-primary-cluster",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 686,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "secrets-live-in-ssm-not-the-repo",
+              "auth-service",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope",
+              "coverage-gap",
+              "no-default-exports",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+            ],
+            "tokens": 1101,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L22",
+          "type": "lookup",
+          "query": "eu data residency frankfurt",
+          "expect": [
+            "eu-tenant-data-stays-in-eu-region"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant-provisioner",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "tenant",
+              "subscription-wording-cancel-not-delete",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "read-replica-for-reporting-queries",
+              "pii-never-in-logs-or-analytics",
+              "stripe-for-subscription-billing",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "scheduler-engine",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "session-2026-01-22-schedule-normalization",
+              "stripe-disagreed-on-proration-rounding",
+              "coverage-gap",
+              "rota",
+              "seat",
+              "reporting-pipeline",
+              "bullmq-on-redis-for-background-jobs",
+              "kysely-over-prisma-for-database-access"
+            ],
+            "tokens": 1167,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "kysely-over-prisma-for-database-access",
+              "move-schedules-to-postgres-jsonb",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "auth-service",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 1441,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb"
+            ]
+          }
+        },
+        {
+          "id": "L23",
+          "type": "lookup",
+          "query": "feature flags launchdarkly",
+          "expect": [
+            "feature-flags-in-postgres-not-launchdarkly"
+          ],
+          "trellis": {
+            "ids": [
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 134,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 135,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L24",
+          "type": "lookup",
+          "query": "why not prisma",
+          "expect": [
+            "kysely-over-prisma-for-database-access"
+          ],
+          "trellis": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 269,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "kysely-over-prisma-for-database-access",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements"
+            ],
+            "tokens": 506,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L25",
+          "type": "lookup",
+          "query": "transactional email provider",
+          "expect": [
+            "sendgrid-for-transactional-email"
+          ],
+          "trellis": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "sendgrid-for-transactional-email",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "mobile-push-gateway",
+              "payroll-export",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "redis-cache-layer",
+              "webhook-dispatcher",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline"
+            ],
+            "tokens": 678,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sendgrid-for-transactional-email",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker",
+              "payroll-export",
+              "pii-never-in-logs-or-analytics"
+            ],
+            "tokens": 687,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L26",
+          "type": "lookup",
+          "query": "reporting queries read replica",
+          "expect": [
+            "read-replica-for-reporting-queries"
+          ],
+          "trellis": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "reporting-pipeline",
+              "postgres-primary-cluster",
+              "payroll-export",
+              "scheduler-engine",
+              "session-2026-01-22-schedule-normalization",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "coverage-gap",
+              "rota",
+              "kysely-over-prisma-for-database-access",
+              "saml-clock-skew-rejected-assertions",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "api-gateway-service"
+            ],
+            "tokens": 769,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "reporting-pipeline",
+              "read-replica-for-reporting-queries",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "admin-dashboard",
+              "bullmq-on-redis-for-background-jobs",
+              "eu-tenant-data-stays-in-eu-region",
+              "mongodb-for-flexible-schedule-documents",
+              "payroll-export",
+              "pii-never-in-logs-or-analytics",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 1370,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "L27",
+          "type": "lookup",
+          "query": "blue green deploy rollback",
+          "expect": [
+            "blue-green-deploys-on-ecs"
+          ],
+          "trellis": {
+            "ids": [
+              "blue-green-deploys-on-ecs",
+              "session-2026-03-14-deploy-pipeline",
+              "ecs-drain-cut-long-lived-websockets",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-for-transactional-email",
+              "pii-never-in-logs-or-analytics",
+              "notification-worker"
+            ],
+            "tokens": 473,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "blue-green-deploys-on-ecs",
+              "ecs-drain-cut-long-lived-websockets",
+              "session-2026-03-14-deploy-pipeline",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 938,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L28",
+          "type": "lookup",
+          "query": "reminders fired twice daylight saving",
+          "expect": [
+            "dst-change-fired-rota-reminders-twice"
+          ],
+          "trellis": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "session-2026-05-07-dst-incident",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "sendgrid-for-transactional-email",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "redis-cache-layer",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-for-subscription-billing",
+              "billing-service"
+            ],
+            "tokens": 804,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "session-2026-05-07-dst-incident",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "bullmq-on-redis-for-background-jobs",
+              "fastify-over-express-for-api",
+              "notification-worker"
+            ],
+            "tokens": 1149,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L29",
+          "type": "lookup",
+          "query": "staging sent no email sendgrid sandbox",
+          "expect": [
+            "sendgrid-sandbox-mode-swallowed-staging-email"
+          ],
+          "trellis": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-for-transactional-email",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "no-default-exports",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "pii-never-in-logs-or-analytics",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "redis-cache-layer",
+              "webhook-dispatcher"
+            ],
+            "tokens": 693,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "sendgrid-for-transactional-email",
+              "notification-worker",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "pii-never-in-logs-or-analytics",
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-webhook-retry-created-duplicate-invoice-rows"
+            ],
+            "tokens": 1105,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L30",
+          "type": "lookup",
+          "query": "camelcase plugin raw sql columns",
+          "expect": [
+            "kysely-camelcase-plugin-breaks-raw-sql"
+          ],
+          "trellis": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "sql-migrations-written-by-hand",
+              "postgres-primary-cluster",
+              "fastify-over-express-for-api",
+              "api-gateway-service",
+              "auth-service"
+            ],
+            "tokens": 433,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "sql-migrations-written-by-hand",
+              "kysely-over-prisma-for-database-access",
+              "fastify-over-express-for-api"
+            ],
+            "tokens": 552,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M01",
+          "type": "multi-hop",
+          "query": "when was the websocket drain problem fixed",
+          "expect": [
+            "session-2026-03-14-deploy-pipeline"
+          ],
+          "trellis": {
+            "ids": [
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 608,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "ecs-drain-cut-long-lived-websockets",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows"
+            ],
+            "tokens": 587,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M02",
+          "type": "multi-hop",
+          "query": "backfilled 41 million rows zero downtime what changed",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "session-2026-01-22-schedule-normalization",
+              "normalize-schedule-tables-drop-jsonb",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "rota",
+              "stripe-webhooks-must-be-idempotent",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 593,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "session-2026-01-22-schedule-normalization",
+              "session-2025-12-10-billing-hardening",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows"
+            ],
+            "tokens": 628,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M03",
+          "type": "multi-hop",
+          "query": "invoices off by one cent failed reconciliation what did we change",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-disagreed-on-proration-rounding",
+              "per-seat-pricing-with-monthly-true-up",
+              "saml-clock-skew-rejected-assertions",
+              "dst-change-fired-rota-reminders-twice",
+              "session-2026-05-07-dst-incident",
+              "billing-service",
+              "stripe-for-subscription-billing",
+              "seat",
+              "webhook-dispatcher",
+              "shift",
+              "notification-worker",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "api-gateway-service",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 836,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-disagreed-on-proration-rounding",
+              "tenant-provisioner",
+              "shift",
+              "admin-dashboard",
+              "dst-change-fired-rota-reminders-twice",
+              "eu-tenant-data-stays-in-eu-region",
+              "feature-flags-in-postgres-not-launchdarkly",
+              "mongodb-for-flexible-schedule-documents",
+              "postgres-primary-cluster",
+              "redis-cache-layer"
+            ],
+            "tokens": 1366,
+            "hit": false,
+            "rank": null,
+            "leaked": [
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "M04",
+          "type": "multi-hop",
+          "query": "customer idp clock skew what was affected",
+          "expect": [
+            "auth-service"
+          ],
+          "trellis": {
+            "ids": [
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "grace-window",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "api-gateway-service",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "session-2026-05-07-dst-incident",
+              "dst-change-fired-rota-reminders-twice",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-for-subscription-billing",
+              "notification-worker",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 700,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "saml-clock-skew-rejected-assertions",
+              "eu-tenant-data-stays-in-eu-region",
+              "grace-window",
+              "instant-proration-on-seat-updates",
+              "session-2026-05-07-dst-incident",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+            ],
+            "tokens": 783,
+            "hit": false,
+            "rank": null,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "M05",
+          "type": "multi-hop",
+          "query": "queue keys silently evicted where do they live",
+          "expect": [
+            "redis-cache-layer"
+          ],
+          "trellis": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "redis-cache-layer",
+              "session-2026-03-14-deploy-pipeline",
+              "secrets-live-in-ssm-not-the-repo",
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "bullmq-on-redis-for-background-jobs",
+              "coverage-gap",
+              "conventional-commits-with-scope",
+              "scheduler-engine",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 602,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "ecs-drain-cut-long-lived-websockets",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "secrets-live-in-ssm-not-the-repo",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "auth-service",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope"
+            ],
+            "tokens": 1481,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M06",
+          "type": "multi-hop",
+          "query": "frankfurt pinning enforced at signup",
+          "expect": [
+            "tenant-provisioner"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant-provisioner",
+              "tenant"
+            ],
+            "tokens": 190,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region"
+            ],
+            "tokens": 138,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M07",
+          "type": "multi-hop",
+          "query": "employee trades an assigned shift who gets told",
+          "expect": [
+            "notification-worker"
+          ],
+          "trellis": {
+            "ids": [
+              "shift",
+              "swap-request",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "sendgrid-for-transactional-email",
+              "seat",
+              "per-seat-pricing-with-monthly-true-up",
+              "rota",
+              "billing-service",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "webhook-dispatcher"
+            ],
+            "tokens": 750,
+            "hit": true,
+            "rank": 4,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "shift",
+              "swap-request",
+              "rota",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "normalize-schedule-tables-drop-jsonb",
+              "payroll-export",
+              "pii-never-in-logs-or-analytics",
+              "seat",
+              "session-2026-01-22-schedule-normalization"
+            ],
+            "tokens": 1012,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M08",
+          "type": "multi-hop",
+          "query": "staffing below minimum who computes it",
+          "expect": [
+            "scheduler-engine"
+          ],
+          "trellis": {
+            "ids": [
+              "coverage-gap",
+              "scheduler-engine",
+              "postgres-primary-cluster",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "webhook-dispatcher"
+            ],
+            "tokens": 407,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "coverage-gap",
+              "per-seat-pricing-with-monthly-true-up"
+            ],
+            "tokens": 337,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M09",
+          "type": "multi-hop",
+          "query": "why is the staging snapshot scrubbed",
+          "expect": [
+            "pii-never-in-logs-or-analytics"
+          ],
+          "trellis": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "pii-never-in-logs-or-analytics",
+              "sendgrid-for-transactional-email",
+              "notification-worker",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 363,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 458,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "S01",
+          "type": "superseded",
+          "query": "should we store schedules in mongodb",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "rota",
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-webhooks-must-be-idempotent",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "seat",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 774,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "move-schedules-to-postgres-jsonb",
+              "mongodb-for-flexible-schedule-documents",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "normalize-schedule-tables-drop-jsonb",
+              "auth-service",
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent"
+            ],
+            "tokens": 1425,
+            "hit": true,
+            "rank": 4,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb",
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "S02",
+          "type": "superseded",
+          "query": "schedule storage jsonb columns",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "rota",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "saml-clock-skew-rejected-assertions",
+              "dst-change-fired-rota-reminders-twice",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "session-2026-05-07-dst-incident",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "api-gateway-service",
+              "kysely-over-prisma-for-database-access",
+              "notification-worker",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 898,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "move-schedules-to-postgres-jsonb",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "session-2026-01-22-schedule-normalization",
+              "coverage-gap",
+              "jwt-in-localstorage-for-spa-auth",
+              "mongodb-for-flexible-schedule-documents",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "scheduler-engine"
+            ],
+            "tokens": 1484,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb",
+              "jwt-in-localstorage-for-spa-auth",
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "S03",
+          "type": "superseded",
+          "query": "where do we keep auth tokens localstorage",
+          "expect": [
+            "httponly-session-cookies-replace-jwt-localstorage"
+          ],
+          "trellis": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "saml-clock-skew-rejected-assertions",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "api-gateway-service",
+              "coverage-gap",
+              "conventional-commits-with-scope",
+              "fastify-over-express-for-api",
+              "scheduler-engine",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 492,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "jwt-in-localstorage-for-spa-auth",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "saml-clock-skew-rejected-assertions",
+              "api-gateway-service",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope",
+              "coverage-gap",
+              "kysely-over-prisma-for-database-access",
+              "mobile-push-gateway"
+            ],
+            "tokens": 1442,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "jwt-in-localstorage-for-spa-auth"
+            ]
+          }
+        },
+        {
+          "id": "S04",
+          "type": "superseded",
+          "query": "jwt storage for the spa",
+          "expect": [
+            "httponly-session-cookies-replace-jwt-localstorage"
+          ],
+          "trellis": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "saml-clock-skew-rejected-assertions",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "session-2026-01-22-schedule-normalization",
+              "api-gateway-service",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "rota",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access"
+            ],
+            "tokens": 602,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "jwt-in-localstorage-for-spa-auth",
+              "move-schedules-to-postgres-jsonb",
+              "session-2025-11-03-auth-migration",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "webhook-dispatcher",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "kysely-over-prisma-for-database-access",
+              "mongodb-for-flexible-schedule-documents"
+            ],
+            "tokens": 1461,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "jwt-in-localstorage-for-spa-auth",
+              "move-schedules-to-postgres-jsonb",
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "S05",
+          "type": "superseded",
+          "query": "prorate seat changes immediately",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "seat",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "eu-tenant-data-stays-in-eu-region",
+              "bullmq-on-redis-for-background-jobs",
+              "tenant-provisioner",
+              "tenant"
+            ],
+            "tokens": 598,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "instant-proration-on-seat-updates",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "billing-service",
+              "seat",
+              "tenant-provisioner"
+            ],
+            "tokens": 903,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "S06",
+          "type": "superseded",
+          "query": "does adding a seat prorate the current invoice",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "seat",
+              "stripe-webhooks-must-be-idempotent",
+              "billing-service",
+              "webhook-dispatcher",
+              "session-2025-12-10-billing-hardening",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 591,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "instant-proration-on-seat-updates",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "billing-service",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "seat",
+              "sendgrid-for-transactional-email",
+              "session-2025-12-10-billing-hardening"
+            ],
+            "tokens": 1394,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "N01",
+          "type": "negative",
+          "query": "kubernetes ingress certificate renewal",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N02",
+          "type": "negative",
+          "query": "webpack vendor chunk splitting",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N03",
+          "type": "negative",
+          "query": "kafka partition rebalance offsets",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N04",
+          "type": "negative",
+          "query": "opentelemetry span sampling",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N05",
+          "type": "negative",
+          "query": "graphql resolver nested queries",
+          "expect": [],
+          "trellis": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "reporting-pipeline",
+              "payroll-export",
+              "scheduler-engine"
+            ],
+            "tokens": 380,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline"
+            ],
+            "tokens": 322,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        }
+      ]
+    },
+    {
+      "budget": 3000,
+      "trellis": {
+        "hitRate": 0.96,
+        "hitRateByType": {
+          "lookup": 0.9666666666666667,
+          "multi-hop": 1,
+          "superseded": 1,
+          "negative": 0.8
+        },
+        "mrr": 0.772962962962963,
+        "meanTokens": 543.6,
+        "leakRate": 0
+      },
+      "grep": {
+        "hitRate": 0.8,
+        "hitRateByType": {
+          "lookup": 1,
+          "multi-hop": 0,
+          "superseded": 1,
+          "negative": 0.8
+        },
+        "mrr": 0.6944444444444444,
+        "meanTokens": 1058.88,
+        "leakRate": 1
+      },
+      "questions": [
+        {
+          "id": "L01",
+          "type": "lookup",
+          "query": "why fastify over express",
+          "expect": [
+            "fastify-over-express-for-api"
+          ],
+          "trellis": {
+            "ids": [
+              "fastify-over-express-for-api",
+              "api-gateway-service",
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage"
+            ],
+            "tokens": 307,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "fastify-over-express-for-api",
+              "api-gateway-service",
+              "dst-change-fired-rota-reminders-twice"
+            ],
+            "tokens": 504,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L02",
+          "type": "lookup",
+          "query": "stripe webhook signature verification",
+          "expect": [
+            "webhook-dispatcher"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs",
+              "stripe-disagreed-on-proration-rounding",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "seat",
+              "notification-worker",
+              "redis-cache-layer"
+            ],
+            "tokens": 715,
+            "hit": true,
+            "rank": 5,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "webhook-dispatcher",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-disagreed-on-proration-rounding",
+              "billing-service",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-for-subscription-billing",
+              "session-2025-12-10-billing-hardening",
+              "seat",
+              "session-2026-01-22-schedule-normalization"
+            ],
+            "tokens": 1745,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L03",
+          "type": "lookup",
+          "query": "duplicate invoice rows webhook retry",
+          "expect": [
+            "stripe-webhook-retry-created-duplicate-invoice-rows",
+            "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "seat",
+              "notification-worker",
+              "redis-cache-layer"
+            ],
+            "tokens": 715,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "stripe-webhooks-must-be-idempotent",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs",
+              "dst-change-fired-rota-reminders-twice",
+              "instant-proration-on-seat-updates",
+              "sendgrid-for-transactional-email",
+              "session-2026-01-22-schedule-normalization",
+              "session-2026-05-07-dst-incident",
+              "stripe-disagreed-on-proration-rounding"
+            ],
+            "tokens": 2150,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "L04",
+          "type": "lookup",
+          "query": "default exports or named exports",
+          "expect": [
+            "no-default-exports",
+            "avoid-default-exports-in-shared-packages"
+          ],
+          "trellis": {
+            "ids": [
+              "avoid-default-exports-in-shared-packages",
+              "no-default-exports",
+              "eu-tenant-data-stays-in-eu-region",
+              "read-replica-for-reporting-queries",
+              "tenant-provisioner",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "reporting-pipeline",
+              "bullmq-on-redis-for-background-jobs",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "dst-change-fired-rota-reminders-twice",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "payroll-export",
+              "tenant",
+              "notification-worker",
+              "redis-cache-layer",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "mobile-push-gateway",
+              "postgres-primary-cluster",
+              "stripe-for-subscription-billing",
+              "swap-request",
+              "billing-service",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 1047,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "no-default-exports",
+              "avoid-default-exports-in-shared-packages",
+              "bullmq-on-redis-for-background-jobs",
+              "ecs-drain-cut-long-lived-websockets",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline",
+              "tenant-provisioner"
+            ],
+            "tokens": 961,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L05",
+          "type": "lookup",
+          "query": "pgbouncer prepared statement does not exist",
+          "expect": [
+            "pgbouncer-transaction-mode-breaks-prepared-statements"
+          ],
+          "trellis": {
+            "ids": [
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "read-replica-for-reporting-queries",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "kysely-over-prisma-for-database-access",
+              "scheduler-engine",
+              "session-2026-01-22-schedule-normalization",
+              "coverage-gap",
+              "rota",
+              "reporting-pipeline"
+            ],
+            "tokens": 557,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 310,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L06",
+          "type": "lookup",
+          "query": "background jobs library",
+          "expect": [
+            "bullmq-on-redis-for-background-jobs"
+          ],
+          "trellis": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "bullmq-on-redis-for-background-jobs",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "dst-change-fired-rota-reminders-twice",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "webhook-dispatcher",
+              "notification-worker",
+              "redis-cache-layer",
+              "stripe-webhooks-must-be-idempotent",
+              "mobile-push-gateway",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "swap-request",
+              "sendgrid-for-transactional-email",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "session-2025-12-10-billing-hardening",
+              "seat"
+            ],
+            "tokens": 941,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "bullmq-on-redis-for-background-jobs",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "notification-worker",
+              "redis-cache-layer",
+              "webhook-dispatcher"
+            ],
+            "tokens": 1024,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L07",
+          "type": "lookup",
+          "query": "what is a tenant in the data model",
+          "expect": [
+            "tenant"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant",
+              "saml-clock-skew-rejected-assertions",
+              "tenant-provisioner",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "read-replica-for-reporting-queries",
+              "auth-service",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "api-gateway-service",
+              "scheduler-engine",
+              "session-2026-01-22-schedule-normalization",
+              "session-2025-11-03-auth-migration",
+              "coverage-gap",
+              "fastify-over-express-for-api",
+              "rota",
+              "reporting-pipeline",
+              "kysely-over-prisma-for-database-access"
+            ],
+            "tokens": 892,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant",
+              "tenant-provisioner",
+              "auth-service",
+              "mongodb-for-flexible-schedule-documents",
+              "move-schedules-to-postgres-jsonb",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "api-gateway-service",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "kysely-over-prisma-for-database-access",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "postgres-primary-cluster",
+              "bullmq-on-redis-for-background-jobs",
+              "fastify-over-express-for-api",
+              "feature-flags-in-postgres-not-launchdarkly",
+              "jwt-in-localstorage-for-spa-auth",
+              "normalize-schedule-tables-drop-jsonb",
+              "notification-worker",
+              "reporting-pipeline",
+              "saml-clock-skew-rejected-assertions"
+            ],
+            "tokens": 2972,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "mongodb-for-flexible-schedule-documents",
+              "move-schedules-to-postgres-jsonb",
+              "jwt-in-localstorage-for-spa-auth"
+            ]
+          }
+        },
+        {
+          "id": "L08",
+          "type": "lookup",
+          "query": "seat billable subscription quantity",
+          "expect": [
+            "seat"
+          ],
+          "trellis": {
+            "ids": [
+              "seat",
+              "per-seat-pricing-with-monthly-true-up",
+              "subscription-wording-cancel-not-delete",
+              "billing-service",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 532,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service",
+              "instant-proration-on-seat-updates",
+              "seat",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "subscription-wording-cancel-not-delete",
+              "tenant-provisioner"
+            ],
+            "tokens": 1122,
+            "hit": true,
+            "rank": 4,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "L09",
+          "type": "lookup",
+          "query": "coverage gap staffing minimum",
+          "expect": [
+            "coverage-gap"
+          ],
+          "trellis": {
+            "ids": [
+              "coverage-gap",
+              "scheduler-engine",
+              "postgres-primary-cluster",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline",
+              "payroll-export"
+            ],
+            "tokens": 296,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "coverage-gap",
+              "reporting-pipeline"
+            ],
+            "tokens": 278,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L10",
+          "type": "lookup",
+          "query": "grace window late clock in",
+          "expect": [
+            "grace-window"
+          ],
+          "trellis": {
+            "ids": [
+              "grace-window",
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "read-replica-for-reporting-queries",
+              "session-2026-01-22-schedule-normalization",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "api-gateway-service",
+              "normalize-schedule-tables-drop-jsonb",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "postgres-primary-cluster",
+              "reporting-pipeline",
+              "payroll-export",
+              "rota",
+              "scheduler-engine"
+            ],
+            "tokens": 679,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "grace-window",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "saml-clock-skew-rejected-assertions",
+              "stripe-disagreed-on-proration-rounding",
+              "coverage-gap",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "tenant-provisioner",
+              "billing-service",
+              "dst-change-fired-rota-reminders-twice",
+              "ecs-drain-cut-long-lived-websockets",
+              "instant-proration-on-seat-updates",
+              "mobile-push-gateway",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "notification-worker",
+              "read-replica-for-reporting-queries",
+              "redis-cache-layer"
+            ],
+            "tokens": 2920,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "L11",
+          "type": "lookup",
+          "query": "payroll export csv format",
+          "expect": [
+            "payroll-export"
+          ],
+          "trellis": {
+            "ids": [
+              "payroll-export",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "public-api-v1-is-frozen",
+              "scheduler-engine"
+            ],
+            "tokens": 421,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "payroll-export",
+              "no-default-exports",
+              "reporting-pipeline",
+              "avoid-default-exports-in-shared-packages",
+              "read-replica-for-reporting-queries",
+              "bullmq-on-redis-for-background-jobs",
+              "public-api-v1-is-frozen"
+            ],
+            "tokens": 826,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L12",
+          "type": "lookup",
+          "query": "swap request manager approval",
+          "expect": [
+            "swap-request"
+          ],
+          "trellis": {
+            "ids": [
+              "swap-request",
+              "dst-change-fired-rota-reminders-twice",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "mobile-push-gateway",
+              "blue-green-deploys-on-ecs",
+              "bullmq-on-redis-for-background-jobs",
+              "sendgrid-for-transactional-email",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "ecs-drain-cut-long-lived-websockets",
+              "redis-cache-layer",
+              "webhook-dispatcher",
+              "session-2026-03-14-deploy-pipeline",
+              "api-gateway-service",
+              "saml-clock-skew-rejected-assertions",
+              "fastify-over-express-for-api",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage"
+            ],
+            "tokens": 944,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "swap-request",
+              "notification-worker",
+              "admin-dashboard",
+              "api-gateway-service",
+              "blue-green-deploys-on-ecs",
+              "ecs-drain-cut-long-lived-websockets",
+              "rota"
+            ],
+            "tokens": 967,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L13",
+          "type": "lookup",
+          "query": "what is a rota",
+          "expect": [
+            "rota"
+          ],
+          "trellis": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "rota",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-05-07-dst-incident",
+              "admin-dashboard",
+              "session-2026-01-22-schedule-normalization",
+              "notification-worker",
+              "scheduler-engine",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "mobile-push-gateway",
+              "read-replica-for-reporting-queries",
+              "coverage-gap",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "sendgrid-for-transactional-email",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 752,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "admin-dashboard",
+              "dst-change-fired-rota-reminders-twice",
+              "rota",
+              "bullmq-on-redis-for-background-jobs",
+              "ecs-drain-cut-long-lived-websockets",
+              "mongodb-for-flexible-schedule-documents",
+              "notification-worker",
+              "scheduler-engine",
+              "secrets-live-in-ssm-not-the-repo",
+              "session-2025-11-03-auth-migration",
+              "session-2026-01-22-schedule-normalization",
+              "session-2026-03-14-deploy-pipeline",
+              "tenant-provisioner"
+            ],
+            "tokens": 1980,
+            "hit": true,
+            "rank": 4,
+            "leaked": [
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "L14",
+          "type": "lookup",
+          "query": "commit message format convention",
+          "expect": [
+            "conventional-commits-with-scope"
+          ],
+          "trellis": {
+            "ids": [
+              "payroll-export",
+              "soc2-audit-trail-for-admin-actions",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline"
+            ],
+            "tokens": 240,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "conventional-commits-with-scope",
+              "payroll-export",
+              "soc2-audit-trail-for-admin-actions"
+            ],
+            "tokens": 300,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L15",
+          "type": "lookup",
+          "query": "are migrations hand written or generated",
+          "expect": [
+            "sql-migrations-written-by-hand"
+          ],
+          "trellis": {
+            "ids": [
+              "sql-migrations-written-by-hand",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "session-2026-01-22-schedule-normalization",
+              "rota"
+            ],
+            "tokens": 449,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sql-migrations-written-by-hand",
+              "kysely-over-prisma-for-database-access",
+              "stripe-webhooks-must-be-idempotent",
+              "webhook-dispatcher",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "api-gateway-service",
+              "move-schedules-to-postgres-jsonb",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "stripe-webhook-retry-created-duplicate-invoice-rows"
+            ],
+            "tokens": 1578,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb"
+            ]
+          }
+        },
+        {
+          "id": "L16",
+          "type": "lookup",
+          "query": "testing style mocks or testcontainers",
+          "expect": [
+            "integration-tests-over-mocked-units"
+          ],
+          "trellis": {
+            "ids": [
+              "integration-tests-over-mocked-units",
+              "avoid-default-exports-in-shared-packages",
+              "no-default-exports",
+              "conventional-commits-with-scope",
+              "sql-migrations-written-by-hand"
+            ],
+            "tokens": 286,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "integration-tests-over-mocked-units",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope",
+              "no-default-exports",
+              "sql-migrations-written-by-hand"
+            ],
+            "tokens": 462,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L17",
+          "type": "lookup",
+          "query": "cancel versus delete wording subscriptions",
+          "expect": [
+            "subscription-wording-cancel-not-delete"
+          ],
+          "trellis": {
+            "ids": [
+              "subscription-wording-cancel-not-delete",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-disagreed-on-proration-rounding",
+              "seat",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 532,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "subscription-wording-cancel-not-delete",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-for-subscription-billing"
+            ],
+            "tokens": 335,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L18",
+          "type": "lookup",
+          "query": "audit trail for admin actions",
+          "expect": [
+            "soc2-audit-trail-for-admin-actions"
+          ],
+          "trellis": {
+            "ids": [
+              "soc2-audit-trail-for-admin-actions",
+              "admin-dashboard",
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 209,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "soc2-audit-trail-for-admin-actions",
+              "admin-dashboard",
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 360,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L19",
+          "type": "lookup",
+          "query": "pii in logs policy",
+          "expect": [
+            "pii-never-in-logs-or-analytics"
+          ],
+          "trellis": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "pii-never-in-logs-or-analytics",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "secrets-live-in-ssm-not-the-repo",
+              "redis-cache-layer",
+              "bullmq-on-redis-for-background-jobs",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "notification-worker",
+              "webhook-dispatcher"
+            ],
+            "tokens": 477,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "pii-never-in-logs-or-analytics",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "redis-cache-layer",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 563,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L20",
+          "type": "lookup",
+          "query": "breaking changes public api v1",
+          "expect": [
+            "public-api-v1-is-frozen"
+          ],
+          "trellis": {
+            "ids": [
+              "public-api-v1-is-frozen",
+              "api-gateway-service",
+              "saml-clock-skew-rejected-assertions",
+              "subscription-wording-cancel-not-delete",
+              "fastify-over-express-for-api",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "integration-tests-over-mocked-units"
+            ],
+            "tokens": 439,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "public-api-v1-is-frozen",
+              "api-gateway-service",
+              "fastify-over-express-for-api",
+              "integration-tests-over-mocked-units",
+              "postgres-primary-cluster",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "subscription-wording-cancel-not-delete"
+            ],
+            "tokens": 935,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L21",
+          "type": "lookup",
+          "query": "where are secrets stored",
+          "expect": [
+            "secrets-live-in-ssm-not-the-repo"
+          ],
+          "trellis": {
+            "ids": [
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "coverage-gap",
+              "session-2026-03-14-deploy-pipeline",
+              "conventional-commits-with-scope",
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "scheduler-engine",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-for-subscription-billing",
+              "postgres-primary-cluster",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 686,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "secrets-live-in-ssm-not-the-repo",
+              "auth-service",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope",
+              "coverage-gap",
+              "no-default-exports",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+            ],
+            "tokens": 1101,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L22",
+          "type": "lookup",
+          "query": "eu data residency frankfurt",
+          "expect": [
+            "eu-tenant-data-stays-in-eu-region"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant-provisioner",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "tenant",
+              "subscription-wording-cancel-not-delete",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "read-replica-for-reporting-queries",
+              "pii-never-in-logs-or-analytics",
+              "stripe-for-subscription-billing",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "scheduler-engine",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "session-2026-01-22-schedule-normalization",
+              "stripe-disagreed-on-proration-rounding",
+              "coverage-gap",
+              "rota",
+              "seat",
+              "reporting-pipeline",
+              "bullmq-on-redis-for-background-jobs",
+              "kysely-over-prisma-for-database-access"
+            ],
+            "tokens": 1167,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "kysely-over-prisma-for-database-access",
+              "move-schedules-to-postgres-jsonb",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "auth-service",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "stripe-for-subscription-billing",
+              "subscription-wording-cancel-not-delete"
+            ],
+            "tokens": 1660,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb"
+            ]
+          }
+        },
+        {
+          "id": "L23",
+          "type": "lookup",
+          "query": "feature flags launchdarkly",
+          "expect": [
+            "feature-flags-in-postgres-not-launchdarkly"
+          ],
+          "trellis": {
+            "ids": [
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 134,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "feature-flags-in-postgres-not-launchdarkly"
+            ],
+            "tokens": 135,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L24",
+          "type": "lookup",
+          "query": "why not prisma",
+          "expect": [
+            "kysely-over-prisma-for-database-access"
+          ],
+          "trellis": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 269,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "kysely-over-prisma-for-database-access",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements"
+            ],
+            "tokens": 506,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L25",
+          "type": "lookup",
+          "query": "transactional email provider",
+          "expect": [
+            "sendgrid-for-transactional-email"
+          ],
+          "trellis": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "sendgrid-for-transactional-email",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "mobile-push-gateway",
+              "payroll-export",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "redis-cache-layer",
+              "webhook-dispatcher",
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline"
+            ],
+            "tokens": 678,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sendgrid-for-transactional-email",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker",
+              "payroll-export",
+              "pii-never-in-logs-or-analytics"
+            ],
+            "tokens": 687,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L26",
+          "type": "lookup",
+          "query": "reporting queries read replica",
+          "expect": [
+            "read-replica-for-reporting-queries"
+          ],
+          "trellis": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "reporting-pipeline",
+              "postgres-primary-cluster",
+              "payroll-export",
+              "scheduler-engine",
+              "session-2026-01-22-schedule-normalization",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "coverage-gap",
+              "rota",
+              "kysely-over-prisma-for-database-access",
+              "saml-clock-skew-rejected-assertions",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "api-gateway-service"
+            ],
+            "tokens": 769,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "reporting-pipeline",
+              "read-replica-for-reporting-queries",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "admin-dashboard",
+              "bullmq-on-redis-for-background-jobs",
+              "eu-tenant-data-stays-in-eu-region",
+              "mongodb-for-flexible-schedule-documents",
+              "payroll-export",
+              "pii-never-in-logs-or-analytics",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 1370,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "L27",
+          "type": "lookup",
+          "query": "blue green deploy rollback",
+          "expect": [
+            "blue-green-deploys-on-ecs"
+          ],
+          "trellis": {
+            "ids": [
+              "blue-green-deploys-on-ecs",
+              "session-2026-03-14-deploy-pipeline",
+              "ecs-drain-cut-long-lived-websockets",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-for-transactional-email",
+              "pii-never-in-logs-or-analytics",
+              "notification-worker"
+            ],
+            "tokens": 473,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "blue-green-deploys-on-ecs",
+              "ecs-drain-cut-long-lived-websockets",
+              "session-2026-03-14-deploy-pipeline",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 938,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L28",
+          "type": "lookup",
+          "query": "reminders fired twice daylight saving",
+          "expect": [
+            "dst-change-fired-rota-reminders-twice"
+          ],
+          "trellis": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "session-2026-05-07-dst-incident",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "notification-worker",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "sendgrid-for-transactional-email",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "redis-cache-layer",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-for-subscription-billing",
+              "billing-service"
+            ],
+            "tokens": 804,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "dst-change-fired-rota-reminders-twice",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "session-2026-05-07-dst-incident",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "bullmq-on-redis-for-background-jobs",
+              "fastify-over-express-for-api",
+              "notification-worker"
+            ],
+            "tokens": 1149,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L29",
+          "type": "lookup",
+          "query": "staging sent no email sendgrid sandbox",
+          "expect": [
+            "sendgrid-sandbox-mode-swallowed-staging-email"
+          ],
+          "trellis": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-for-transactional-email",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "session-2026-05-07-dst-incident",
+              "no-default-exports",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "pii-never-in-logs-or-analytics",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "redis-cache-layer",
+              "webhook-dispatcher"
+            ],
+            "tokens": 693,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "sendgrid-for-transactional-email",
+              "notification-worker",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "pii-never-in-logs-or-analytics",
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-webhook-retry-created-duplicate-invoice-rows"
+            ],
+            "tokens": 1105,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "L30",
+          "type": "lookup",
+          "query": "camelcase plugin raw sql columns",
+          "expect": [
+            "kysely-camelcase-plugin-breaks-raw-sql"
+          ],
+          "trellis": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access",
+              "sql-migrations-written-by-hand",
+              "postgres-primary-cluster",
+              "fastify-over-express-for-api",
+              "api-gateway-service",
+              "auth-service"
+            ],
+            "tokens": 433,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "sql-migrations-written-by-hand",
+              "kysely-over-prisma-for-database-access",
+              "fastify-over-express-for-api"
+            ],
+            "tokens": 552,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M01",
+          "type": "multi-hop",
+          "query": "when was the websocket drain problem fixed",
+          "expect": [
+            "session-2026-03-14-deploy-pipeline"
+          ],
+          "trellis": {
+            "ids": [
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent",
+              "session-2025-12-10-billing-hardening",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 608,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "ecs-drain-cut-long-lived-websockets",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows"
+            ],
+            "tokens": 587,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M02",
+          "type": "multi-hop",
+          "query": "backfilled 41 million rows zero downtime what changed",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "session-2026-01-22-schedule-normalization",
+              "normalize-schedule-tables-drop-jsonb",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "rota",
+              "stripe-webhooks-must-be-idempotent",
+              "webhook-dispatcher",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 593,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "session-2026-01-22-schedule-normalization",
+              "session-2025-12-10-billing-hardening",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows"
+            ],
+            "tokens": 628,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M03",
+          "type": "multi-hop",
+          "query": "invoices off by one cent failed reconciliation what did we change",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "stripe-disagreed-on-proration-rounding",
+              "per-seat-pricing-with-monthly-true-up",
+              "saml-clock-skew-rejected-assertions",
+              "dst-change-fired-rota-reminders-twice",
+              "session-2026-05-07-dst-incident",
+              "billing-service",
+              "stripe-for-subscription-billing",
+              "seat",
+              "webhook-dispatcher",
+              "shift",
+              "notification-worker",
+              "auth-service",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "api-gateway-service",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 836,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "stripe-disagreed-on-proration-rounding",
+              "tenant-provisioner",
+              "shift",
+              "admin-dashboard",
+              "dst-change-fired-rota-reminders-twice",
+              "eu-tenant-data-stays-in-eu-region",
+              "feature-flags-in-postgres-not-launchdarkly",
+              "mongodb-for-flexible-schedule-documents",
+              "postgres-primary-cluster",
+              "redis-cache-layer",
+              "saml-clock-skew-rejected-assertions",
+              "api-gateway-service",
+              "auth-service",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs",
+              "mobile-push-gateway",
+              "move-schedules-to-postgres-jsonb",
+              "normalize-schedule-tables-drop-jsonb",
+              "notification-worker",
+              "pii-never-in-logs-or-analytics"
+            ],
+            "tokens": 2923,
+            "hit": false,
+            "rank": null,
+            "leaked": [
+              "mongodb-for-flexible-schedule-documents",
+              "move-schedules-to-postgres-jsonb"
+            ]
+          }
+        },
+        {
+          "id": "M04",
+          "type": "multi-hop",
+          "query": "customer idp clock skew what was affected",
+          "expect": [
+            "auth-service"
+          ],
+          "trellis": {
+            "ids": [
+              "saml-clock-skew-rejected-assertions",
+              "auth-service",
+              "grace-window",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "api-gateway-service",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "session-2026-05-07-dst-incident",
+              "dst-change-fired-rota-reminders-twice",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "stripe-for-subscription-billing",
+              "notification-worker",
+              "billing-service",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 700,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "saml-clock-skew-rejected-assertions",
+              "eu-tenant-data-stays-in-eu-region",
+              "grace-window",
+              "instant-proration-on-seat-updates",
+              "session-2026-05-07-dst-incident",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows"
+            ],
+            "tokens": 783,
+            "hit": false,
+            "rank": null,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "M05",
+          "type": "multi-hop",
+          "query": "queue keys silently evicted where do they live",
+          "expect": [
+            "redis-cache-layer"
+          ],
+          "trellis": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "worker-jobs-must-be-safe-to-run-twice",
+              "redis-cache-layer",
+              "session-2026-03-14-deploy-pipeline",
+              "secrets-live-in-ssm-not-the-repo",
+              "ecs-drain-cut-long-lived-websockets",
+              "blue-green-deploys-on-ecs",
+              "bullmq-on-redis-for-background-jobs",
+              "coverage-gap",
+              "conventional-commits-with-scope",
+              "scheduler-engine",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 602,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "ecs-drain-cut-long-lived-websockets",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "secrets-live-in-ssm-not-the-repo",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "session-2026-03-14-deploy-pipeline",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "auth-service",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope",
+              "coverage-gap",
+              "feature-flags-in-postgres-not-launchdarkly",
+              "no-default-exports",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "sendgrid-for-transactional-email",
+              "stripe-webhooks-must-be-idempotent",
+              "worker-jobs-must-be-safe-to-run-twice"
+            ],
+            "tokens": 2617,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M06",
+          "type": "multi-hop",
+          "query": "frankfurt pinning enforced at signup",
+          "expect": [
+            "tenant-provisioner"
+          ],
+          "trellis": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region",
+              "tenant-provisioner",
+              "tenant"
+            ],
+            "tokens": 190,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "eu-tenant-data-stays-in-eu-region"
+            ],
+            "tokens": 138,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M07",
+          "type": "multi-hop",
+          "query": "employee trades an assigned shift who gets told",
+          "expect": [
+            "notification-worker"
+          ],
+          "trellis": {
+            "ids": [
+              "shift",
+              "swap-request",
+              "dst-change-fired-rota-reminders-twice",
+              "notification-worker",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "sendgrid-for-transactional-email",
+              "seat",
+              "per-seat-pricing-with-monthly-true-up",
+              "rota",
+              "billing-service",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "webhook-dispatcher"
+            ],
+            "tokens": 750,
+            "hit": true,
+            "rank": 4,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "shift",
+              "swap-request",
+              "rota",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "normalize-schedule-tables-drop-jsonb",
+              "payroll-export",
+              "pii-never-in-logs-or-analytics",
+              "seat",
+              "session-2026-01-22-schedule-normalization"
+            ],
+            "tokens": 1012,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M08",
+          "type": "multi-hop",
+          "query": "staffing below minimum who computes it",
+          "expect": [
+            "scheduler-engine"
+          ],
+          "trellis": {
+            "ids": [
+              "coverage-gap",
+              "scheduler-engine",
+              "postgres-primary-cluster",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "billing-service",
+              "webhook-dispatcher"
+            ],
+            "tokens": 407,
+            "hit": true,
+            "rank": 2,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "coverage-gap",
+              "per-seat-pricing-with-monthly-true-up"
+            ],
+            "tokens": 337,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "M09",
+          "type": "multi-hop",
+          "query": "why is the staging snapshot scrubbed",
+          "expect": [
+            "pii-never-in-logs-or-analytics"
+          ],
+          "trellis": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "pii-never-in-logs-or-analytics",
+              "sendgrid-for-transactional-email",
+              "notification-worker",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 363,
+            "hit": true,
+            "rank": 3,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "sendgrid-sandbox-mode-swallowed-staging-email",
+              "secrets-live-in-ssm-not-the-repo"
+            ],
+            "tokens": 458,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "S01",
+          "type": "superseded",
+          "query": "should we store schedules in mongodb",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "rota",
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-webhooks-must-be-idempotent",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "session-2025-12-10-billing-hardening",
+              "seat",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 774,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "move-schedules-to-postgres-jsonb",
+              "mongodb-for-flexible-schedule-documents",
+              "nightly-scrubbed-production-snapshot-for-staging",
+              "normalize-schedule-tables-drop-jsonb",
+              "auth-service",
+              "secrets-live-in-ssm-not-the-repo",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhooks-must-be-idempotent"
+            ],
+            "tokens": 1425,
+            "hit": true,
+            "rank": 4,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb",
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "S02",
+          "type": "superseded",
+          "query": "schedule storage jsonb columns",
+          "expect": [
+            "normalize-schedule-tables-drop-jsonb"
+          ],
+          "trellis": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2026-01-22-schedule-normalization",
+              "rota",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "saml-clock-skew-rejected-assertions",
+              "dst-change-fired-rota-reminders-twice",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "session-2026-05-07-dst-incident",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "api-gateway-service",
+              "kysely-over-prisma-for-database-access",
+              "notification-worker",
+              "mobile-push-gateway",
+              "bullmq-on-redis-for-background-jobs",
+              "swap-request",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 898,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "normalize-schedule-tables-drop-jsonb",
+              "move-schedules-to-postgres-jsonb",
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "session-2026-01-22-schedule-normalization",
+              "coverage-gap",
+              "jwt-in-localstorage-for-spa-auth",
+              "mongodb-for-flexible-schedule-documents",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "scheduler-engine",
+              "dst-change-fired-rota-reminders-twice",
+              "grace-window",
+              "kysely-over-prisma-for-database-access",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "postgres-primary-cluster",
+              "read-replica-for-reporting-queries",
+              "session-2025-11-03-auth-migration",
+              "shift",
+              "sql-migrations-written-by-hand"
+            ],
+            "tokens": 2650,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "move-schedules-to-postgres-jsonb",
+              "jwt-in-localstorage-for-spa-auth",
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "S03",
+          "type": "superseded",
+          "query": "where do we keep auth tokens localstorage",
+          "expect": [
+            "httponly-session-cookies-replace-jwt-localstorage"
+          ],
+          "trellis": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "saml-clock-skew-rejected-assertions",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "api-gateway-service",
+              "coverage-gap",
+              "conventional-commits-with-scope",
+              "fastify-over-express-for-api",
+              "scheduler-engine",
+              "postgres-primary-cluster"
+            ],
+            "tokens": 492,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "jwt-in-localstorage-for-spa-auth",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "saml-clock-skew-rejected-assertions",
+              "api-gateway-service",
+              "avoid-default-exports-in-shared-packages",
+              "conventional-commits-with-scope",
+              "coverage-gap",
+              "kysely-over-prisma-for-database-access",
+              "mobile-push-gateway",
+              "mongodb-for-flexible-schedule-documents",
+              "move-schedules-to-postgres-jsonb",
+              "no-default-exports",
+              "redis-allkeys-lru-evicted-bullmq-jobs",
+              "sendgrid-for-transactional-email"
+            ],
+            "tokens": 2210,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "jwt-in-localstorage-for-spa-auth",
+              "mongodb-for-flexible-schedule-documents",
+              "move-schedules-to-postgres-jsonb"
+            ]
+          }
+        },
+        {
+          "id": "S04",
+          "type": "superseded",
+          "query": "jwt storage for the spa",
+          "expect": [
+            "httponly-session-cookies-replace-jwt-localstorage"
+          ],
+          "trellis": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "saml-clock-skew-rejected-assertions",
+              "normalize-schedule-tables-drop-jsonb",
+              "session-2025-11-03-auth-migration",
+              "auth-service",
+              "session-2026-01-22-schedule-normalization",
+              "api-gateway-service",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "rota",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "kysely-over-prisma-for-database-access"
+            ],
+            "tokens": 602,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "httponly-session-cookies-replace-jwt-localstorage",
+              "jwt-in-localstorage-for-spa-auth",
+              "move-schedules-to-postgres-jsonb",
+              "session-2025-11-03-auth-migration",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "webhook-dispatcher",
+              "kysely-camelcase-plugin-breaks-raw-sql",
+              "kysely-over-prisma-for-database-access",
+              "mongodb-for-flexible-schedule-documents",
+              "normalize-schedule-tables-drop-jsonb",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "postgres-primary-cluster",
+              "read-replica-for-reporting-queries",
+              "session-2026-01-22-schedule-normalization",
+              "sql-migrations-written-by-hand",
+              "stripe-for-subscription-billing"
+            ],
+            "tokens": 2513,
+            "hit": true,
+            "rank": 1,
+            "leaked": [
+              "jwt-in-localstorage-for-spa-auth",
+              "move-schedules-to-postgres-jsonb",
+              "mongodb-for-flexible-schedule-documents"
+            ]
+          }
+        },
+        {
+          "id": "S05",
+          "type": "superseded",
+          "query": "prorate seat changes immediately",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "seat",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "billing-service",
+              "webhook-dispatcher",
+              "stripe-webhooks-must-be-idempotent",
+              "eu-tenant-data-stays-in-eu-region",
+              "bullmq-on-redis-for-background-jobs",
+              "tenant-provisioner",
+              "tenant"
+            ],
+            "tokens": 598,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "instant-proration-on-seat-updates",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "billing-service",
+              "seat",
+              "tenant-provisioner"
+            ],
+            "tokens": 903,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "S06",
+          "type": "superseded",
+          "query": "does adding a seat prorate the current invoice",
+          "expect": [
+            "per-seat-pricing-with-monthly-true-up"
+          ],
+          "trellis": {
+            "ids": [
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-disagreed-on-proration-rounding",
+              "stripe-for-subscription-billing",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "seat",
+              "stripe-webhooks-must-be-idempotent",
+              "billing-service",
+              "webhook-dispatcher",
+              "session-2025-12-10-billing-hardening",
+              "bullmq-on-redis-for-background-jobs"
+            ],
+            "tokens": 591,
+            "hit": true,
+            "rank": 1,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "instant-proration-on-seat-updates",
+              "per-seat-pricing-with-monthly-true-up",
+              "stripe-disagreed-on-proration-rounding",
+              "billing-service",
+              "stripe-webhook-redelivery-created-duplicate-invoice-rows",
+              "stripe-webhook-retry-created-duplicate-invoice-rows",
+              "seat",
+              "sendgrid-for-transactional-email",
+              "session-2025-12-10-billing-hardening",
+              "sql-migrations-written-by-hand",
+              "stripe-for-subscription-billing",
+              "stripe-webhooks-must-be-idempotent",
+              "tenant-provisioner"
+            ],
+            "tokens": 1943,
+            "hit": true,
+            "rank": 2,
+            "leaked": [
+              "instant-proration-on-seat-updates"
+            ]
+          }
+        },
+        {
+          "id": "N01",
+          "type": "negative",
+          "query": "kubernetes ingress certificate renewal",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N02",
+          "type": "negative",
+          "query": "webpack vendor chunk splitting",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N03",
+          "type": "negative",
+          "query": "kafka partition rebalance offsets",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N04",
+          "type": "negative",
+          "query": "opentelemetry span sampling",
+          "expect": [],
+          "trellis": {
+            "ids": [],
+            "tokens": 65,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [],
+            "tokens": 0,
+            "hit": true,
+            "rank": null,
+            "leaked": []
+          }
+        },
+        {
+          "id": "N05",
+          "type": "negative",
+          "query": "graphql resolver nested queries",
+          "expect": [],
+          "trellis": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "pgbouncer-transaction-mode-breaks-prepared-statements",
+              "normalize-schedule-tables-drop-jsonb",
+              "postgres-primary-cluster",
+              "reporting-pipeline",
+              "payroll-export",
+              "scheduler-engine"
+            ],
+            "tokens": 380,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          },
+          "grep": {
+            "ids": [
+              "read-replica-for-reporting-queries",
+              "reporting-pipeline"
+            ],
+            "tokens": 322,
+            "hit": false,
+            "rank": null,
+            "leaked": []
+          }
+        }
+      ]
+    }
+  ],
+  "grepWins": [
+    "1500/lookup",
+    "3000/lookup"
+  ],
+  "verdict": {
+    "budget": 1500,
+    "pass": true,
+    "line": "GATE PASS: trellis vs grep at 1500 — hit 96.0% vs 80.0%, MRR 0.773 vs 0.694, superseded leak 0.0% vs 100.0%, mean tokens 544 vs 836"
+  }
+}
